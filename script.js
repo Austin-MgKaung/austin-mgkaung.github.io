@@ -153,10 +153,12 @@
       title: item.title || "Experience",
       tag: item.tag || "",
       place: item.place || "",
+      category: item.category || "",
       badge: item.badge || "",
       summary: item.summary || "",
       details: item.details || "",
       highlights: Array.isArray(item.highlights) ? item.highlights.filter(Boolean) : [],
+      tags: Array.isArray(item.tags) ? item.tags.filter(Boolean) : [],
       image: item.image || "",
       imageAlt: item.imageAlt || `${item.title || "Experience"} image`
     };
@@ -2131,7 +2133,7 @@
     const target = document.querySelector("[data-overview-timeline]");
     if (!target) return;
 
-    const items = (defaults.experience || []).map(normalizeExperience).slice(0, 3);
+    const items = (defaults.experience || []).map(normalizeExperience).slice(0, 4);
     target.innerHTML = items.length
       ? items.map((item, index) => timelineItem(item, index, true)).join("")
       : emptyState("Timeline coming soon", "Add experience entries in Admin and they will appear here.");
@@ -2157,7 +2159,14 @@
     const highlights = item.highlights && item.highlights.length && !compact
       ? `<ul class="timeline-highlights">${item.highlights.map(point => `<li>${escapeHtml(point)}</li>`).join("")}</ul>`
       : "";
-    const place = item.place ? `<span class="timeline-place">${escapeHtml(item.place)}</span>` : "";
+    const tags = item.tags && item.tags.length && !compact
+      ? `<div class="timeline-tags tool-chip-grid">${item.tags.map(tag => `<span class="tool-chip">${escapeHtml(tag)}</span>`).join("")}</div>`
+      : "";
+    const metaParts = [];
+    if (item.period) metaParts.push(`<span>${escapeHtml(item.period)}</span>`);
+    if (item.place) metaParts.push(`<span class="timeline-place">${escapeHtml(item.place)}</span>`);
+    if (item.category) metaParts.push(`<span class="timeline-category">${escapeHtml(item.category)}</span>`);
+    const meta = metaParts.join(`<span class="timeline-sep" aria-hidden="true">&middot;</span>`);
     const badge = item.badge ? `<span class="timeline-badge">${escapeHtml(item.badge)}</span>` : "";
     const org = item.tag && item.title
       ? `<p class="timeline-org">${escapeHtml(item.title)}${badge}</p>`
@@ -2172,14 +2181,14 @@
           ${image}
           <div class="timeline-copy">
             <div class="timeline-meta">
-              <span>${escapeHtml(item.period)}</span>
-              ${place}
+              ${meta}
             </div>
             <h2>${escapeHtml(item.tag || item.title)}</h2>
             ${org}
             <p>${escapeHtml(item.summary)}</p>
             ${details}
             ${highlights}
+            ${tags}
           </div>
         </div>
       </article>`;
@@ -2333,222 +2342,6 @@
       </article>`).join("");
   }
 
-  function initScope() {
-    const path = document.getElementById("spike-path");
-    const dot = document.getElementById("scope-dot");
-    const vmReadout = document.getElementById("vm-readout");
-    const status = document.getElementById("scope-status");
-    if (!path) return;
-
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const width = 480;
-    const baseline = 168;
-    const peak = 30;
-    const reset = 200;
-    const cycleWidth = 160;
-
-    function buildCycle(startX) {
-      const points = [];
-      const restLen = cycleWidth * 0.28;
-      const rampLen = cycleWidth * 0.22;
-      const spikeLen = cycleWidth * 0.08;
-      const resetLen = cycleWidth * 0.10;
-      const refracLen = cycleWidth - restLen - rampLen - spikeLen - resetLen;
-      let x = startX;
-
-      points.push([x, baseline]);
-      x += restLen;
-      points.push([x, baseline]);
-
-      for (let i = 1; i <= 6; i += 1) {
-        const t = i / 6;
-        points.push([x + rampLen * t, baseline - 40 * t]);
-      }
-      x += rampLen;
-
-      points.push([x + spikeLen * 0.4, peak]);
-      points.push([x + spikeLen * 0.7, peak + 12]);
-      x += spikeLen;
-
-      points.push([x + resetLen * 0.5, reset]);
-      x += resetLen;
-
-      for (let i = 1; i <= 5; i += 1) {
-        const t = i / 5;
-        points.push([x + refracLen * t, reset - (reset - baseline) * t]);
-      }
-
-      return points;
-    }
-
-    let allPoints = [];
-    for (let x = -cycleWidth; x < width + cycleWidth; x += cycleWidth) {
-      allPoints = allPoints.concat(buildCycle(x));
-    }
-
-    path.setAttribute("d", allPoints.map((point, index) => {
-      const command = index === 0 ? "M" : "L";
-      return `${command}${point[0].toFixed(1)},${point[1].toFixed(1)}`;
-    }).join(" "));
-
-    if (prefersReducedMotion) return;
-
-    let offset = 0;
-    function animate() {
-      offset -= 0.6;
-      if (offset <= -cycleWidth) offset += cycleWidth;
-      path.setAttribute("transform", `translate(${offset},0)`);
-
-      const sampleX = 340 - offset;
-      let nearest = allPoints[0];
-      let best = Infinity;
-      allPoints.forEach(point => {
-        const distance = Math.abs(point[0] - sampleX);
-        if (distance < best) {
-          best = distance;
-          nearest = point;
-        }
-      });
-
-      if (dot) {
-        dot.setAttribute("cx", 340);
-        dot.setAttribute("cy", nearest[1]);
-      }
-
-      if (vmReadout && status) {
-        if (nearest[1] < 60) {
-          vmReadout.textContent = "+30";
-          status.textContent = "FIRING";
-          status.classList.add("firing");
-        } else {
-          vmReadout.textContent = Math.round(-70 + (baseline - nearest[1]) * 0.6);
-          status.textContent = "RESTING";
-          status.classList.remove("firing");
-        }
-      }
-
-      requestAnimationFrame(animate);
-    }
-
-    requestAnimationFrame(animate);
-  }
-
-  function initLiveSignal() {
-    const wave = document.querySelector("[data-live-wave]");
-    const fill = document.querySelector("[data-live-wave-fill]");
-    const barsGroup = document.querySelector("[data-spectrum-bars]");
-    const readout = document.querySelector("[data-signal-readout]");
-    const nodes = Array.from(document.querySelectorAll("[data-system-node]"));
-    const quality = document.querySelector("[data-monitor-quality]");
-    const peak = document.querySelector("[data-monitor-peak]");
-    const packets = document.querySelector("[data-monitor-packets]");
-    const status = document.querySelector("[data-monitor-status]");
-    if (!wave || !fill || !barsGroup) return;
-
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const left = 24;
-    const right = 496;
-    const waveBase = 118;
-    const fillBase = 164;
-    const barBottom = 260;
-    const barCount = 28;
-    const barGap = 5;
-    const barAreaWidth = right - left;
-    const barWidth = (barAreaWidth - barGap * (barCount - 1)) / barCount;
-
-    barsGroup.innerHTML = Array.from({ length: barCount }).map((_, index) => {
-      const x = left + index * (barWidth + barGap);
-      return `<rect class="spectrum-bar" x="${x.toFixed(2)}" y="${barBottom}" width="${barWidth.toFixed(2)}" height="0" rx="2"></rect>`;
-    }).join("");
-
-    const bars = Array.from(barsGroup.querySelectorAll(".spectrum-bar"));
-
-    function gaussian(index, center, spread, gain) {
-      return gain * Math.exp(-Math.pow((index - center) / spread, 2));
-    }
-
-    function draw(time) {
-      const t = (time || 0) / 1000;
-      const points = [];
-
-      for (let x = left; x <= right; x += 6) {
-        const n = (x - left) / (right - left);
-        const y = waveBase
-          + Math.sin(n * Math.PI * 4 + t * 2.2) * 24
-          + Math.sin(n * Math.PI * 10 - t * 3.1) * 10
-          + Math.sin(n * Math.PI * 18 + t * 1.3) * 5;
-        points.push([x, y]);
-      }
-
-      const line = points.map((point, index) => {
-        const command = index === 0 ? "M" : "L";
-        return `${command}${point[0].toFixed(1)},${point[1].toFixed(1)}`;
-      }).join(" ");
-
-      wave.setAttribute("d", line);
-      fill.setAttribute("d", `${line} L${right},${fillBase} L${left},${fillBase} Z`);
-
-      bars.forEach((bar, index) => {
-        const movingPeak = 8 + Math.sin(t * 0.8) * 2.5;
-        const secondaryPeak = 19 + Math.cos(t * 0.6) * 2;
-        const energy = 0.18
-          + gaussian(index, movingPeak, 2.5, 0.82)
-          + gaussian(index, secondaryPeak, 3.4, 0.58)
-          + Math.sin(t * 2.4 + index * 0.65) * 0.08;
-        const height = Math.max(8, Math.min(92, energy * 82));
-        bar.setAttribute("y", (barBottom - height).toFixed(1));
-        bar.setAttribute("height", height.toFixed(1));
-      });
-
-      if (readout) {
-        const frequency = Math.round(118 + Math.sin(t * 0.9) * 16 + Math.cos(t * 0.35) * 8);
-        readout.textContent = `${frequency} Hz`;
-        if (peak) peak.textContent = `${frequency} Hz`;
-      }
-
-      if (quality) {
-        quality.textContent = `${Math.round(91 + Math.sin(t * 0.7) * 4)}%`;
-      }
-
-      if (packets) {
-        packets.textContent = `${Math.round(44 + Math.cos(t * 1.1) * 6)}/s`;
-      }
-
-      if (status) {
-        status.textContent = Math.sin(t * 1.6) > -0.72 ? "MQTT connected" : "syncing";
-      }
-
-      if (nodes.length) {
-        const activeIndex = Math.floor(t * 1.7) % nodes.length;
-        nodes.forEach((node, index) => {
-          node.classList.toggle("active", index === activeIndex);
-        });
-      }
-
-      if (!prefersReducedMotion) {
-        requestAnimationFrame(draw);
-      }
-    }
-
-    function drawAtRest() {
-      draw(0);
-      if (readout) readout.textContent = "128 Hz";
-      if (peak) peak.textContent = "128 Hz";
-      if (quality) quality.textContent = "92%";
-      if (packets) packets.textContent = "48/s";
-      if (status) status.textContent = "MQTT connected";
-      if (nodes.length) {
-        nodes.forEach((node, index) => node.classList.toggle("active", index === 0));
-      }
-    }
-
-    if (prefersReducedMotion) {
-      drawAtRest();
-    } else {
-      draw(0);
-    }
-  }
-
   async function loadJson(path) {
     const response = await fetch(path);
     if (!response.ok) return null;
@@ -2645,8 +2438,6 @@
     renderCertificates();
     renderProfile();
     renderContact();
-    initScope();
-    initLiveSignal();
   }
 
   async function init() {

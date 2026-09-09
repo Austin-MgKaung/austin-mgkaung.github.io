@@ -160,6 +160,8 @@
         "Nordic nRF",
         "Silicon Labs",
         "U-blox",
+        "BLE",
+        "LTE / Cellular",
         "Zephyr RTOS"
       ]
     },

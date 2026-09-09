@@ -80,10 +80,11 @@
           <h1 data-profile-name>Kaung Myat Tun</h1>
         </div>
         <span class="upload-status" data-hero-photo-status></span>
-        <p class="role" data-profile-role>Embedded Electronics | PCB Hardware | Intelligent Sensing Systems</p>
+        <p class="role" data-profile-role>Electronics Engineer · IC Design · FPGA · Embedded Systems</p>
         <p class="lede" data-profile-summary>
-          Electronics and embedded systems engineer focused on intelligent sensing, mixed-signal PCB hardware,
-          firmware, robotics systems, and practical hardware/software integration.
+          Electronics engineer in Sheffield, just out of a First-Class MEng with a year in industry on
+          embedded and wireless systems. My interests are fairly broad, but most of my own time goes into
+          FPGA and digital design, and lately analog and IC.
         </p>
         <p class="lede lede-why" data-profile-why></p>
         <div class="hero-actions">
@@ -92,131 +93,64 @@
         </div>
       </div>
       <div class="hero-signal-card">
-        <p class="sr-only">Simulated demo of an IIoT sensor telemetry pipeline: vibration sensor, analog front end, MCU firmware, MQTT, and a Grafana dashboard. The numbers and waveform shown are illustrative, not a live data feed.</p>
         <div class="monitor-header">
           <div class="signal-profile-copy">
-            <span class="feature-tag">Live Embedded System Monitor</span>
-            <h2 data-profile-short-role>Electronics &amp; Embedded Systems Engineer</h2>
-            <p><span data-profile-location>Sheffield, UK</span> / sensor node demo</p>
+            <span class="feature-tag">Current work</span>
+            <h2>What I&rsquo;m building</h2>
+            <p data-profile-location>Sheffield, UK</p>
           </div>
           <div class="monitor-status">
             <span class="status-dot"></span>
-            <span data-monitor-status>MQTT connected</span>
+            <span>Sep 2026</span>
           </div>
         </div>
 
-        <div class="system-flow" aria-label="Embedded data pipeline">
-          <div class="system-node active" data-system-node>
-            <span>01</span>
-            <strong>Sensor</strong>
-            <em>vibration</em>
-          </div>
-          <div class="system-node" data-system-node>
-            <span>02</span>
-            <strong>AFE</strong>
-            <em>filter + ADC</em>
-          </div>
-          <div class="system-node" data-system-node>
-            <span>03</span>
-            <strong>MCU</strong>
-            <em>firmware</em>
-          </div>
-          <div class="system-node" data-system-node>
-            <span>04</span>
-            <strong>MQTT</strong>
-            <em>telemetry</em>
-          </div>
-          <div class="system-node" data-system-node>
-            <span>05</span>
-            <strong>Grafana</strong>
-            <em>dashboard</em>
-          </div>
-        </div>
+        <p class="hero-card-lede">Two projects on the bench right now: an analog IC on the Sky130 open PDK, and a RISC-V processor in Verilog.</p>
 
-        <div class="monitor-grid">
-          <div class="telemetry-panel">
-            <div class="telemetry-row">
-              <span>Signal quality</span>
-              <strong data-monitor-quality>92%</strong>
-            </div>
-            <div class="telemetry-row">
-              <span>Vibration peak</span>
-              <strong data-monitor-peak>128 Hz</strong>
-            </div>
-            <div class="telemetry-row">
-              <span>Packet rate</span>
-              <strong data-monitor-packets>48/s</strong>
-            </div>
-            <div class="telemetry-row">
-              <span>Pipeline</span>
-              <strong>Python + Docker</strong>
-            </div>
+        <div class="telemetry-panel telemetry-panel-grid">
+          <div class="telemetry-row">
+            <span>Analog IC</span>
+            <strong>Axon-Hillock &mdash; Sky130 layout</strong>
           </div>
-
-          <div class="signal-panel">
-            <div class="signal-panel-head">
-              <span>Waveform + FFT</span>
-              <span data-signal-readout>128 Hz</span>
-            </div>
-            <svg class="signal-visual" viewBox="0 0 520 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Animated sensor waveform and frequency spectrum">
-              <defs>
-                <pattern id="signal-grid" width="26" height="26" patternUnits="userSpaceOnUse">
-                  <path d="M 26 0 L 0 0 0 26" fill="none" stroke="var(--line)" stroke-width="1"/>
-                </pattern>
-                <linearGradient id="signal-fill" x1="0" x2="1" y1="0" y2="0">
-                  <stop offset="0%" stop-color="var(--teal)"/>
-                  <stop offset="100%" stop-color="var(--accent)"/>
-                </linearGradient>
-              </defs>
-              <rect width="520" height="300" rx="8" fill="var(--scope-bg)"/>
-              <rect width="520" height="300" rx="8" fill="url(#signal-grid)"/>
-              <line x1="24" y1="118" x2="496" y2="118" stroke="var(--line-strong)" stroke-width="1"/>
-              <line x1="24" y1="242" x2="496" y2="242" stroke="var(--line-strong)" stroke-width="1"/>
-              <path class="live-wave-fill" data-live-wave-fill d=""/>
-              <path class="live-wave" data-live-wave d=""/>
-              <g data-spectrum-bars></g>
-            </svg>
-            <div class="signal-metrics">
-              <span>Sensor waveform</span>
-              <span>Frequency peaks</span>
-              <span>Live update</span>
-            </div>
+          <div class="telemetry-row">
+            <span>Digital</span>
+            <strong>COWCPU &mdash; RV32I pipeline</strong>
           </div>
         </div>
 
         <div class="monitor-stack">
-          <span>C / C++ firmware</span>
-          <span>nRF / STM32</span>
-          <span>MQTT</span>
-          <span>Grafana</span>
+          <span>Sky130</span>
+          <span>Magic</span>
+          <span>Verilog</span>
+          <span>Vivado</span>
         </div>
-        <p class="table-footnote">Simulated telemetry — an illustrative pipeline demo, not a live data feed.</p>
+        <p class="table-footnote">A manually maintained snapshot of current work.</p>
       </div>
     </div>
   </section>
 
   <section class="section section-compact">
-    <h2>Proof Snapshot</h2>
+    <h2>Engineering at a Glance</h2>
     <div class="proof-strip">
       <article class="proof-item">
-        <span class="proof-value">12 mo</span>
-        <span class="proof-label">Industry placement</span>
+        <span class="proof-value">First-Class</span>
+        <span class="proof-label">MEng Electrical &amp; Electronic Engineering</span>
       </article>
       <article class="proof-item">
-        <span class="proof-value">4-layer</span>
-        <span class="proof-label">IIoT PCB prototypes</span>
+        <span class="proof-value">Year in Industry</span>
+        <span class="proof-label">Electronics Engineering at Air Products</span>
       </article>
       <article class="proof-item">
-        <span class="proof-value">BLE / LTE</span>
-        <span class="proof-label">Embedded wireless systems</span>
+        <span class="proof-value">BLE + LTE</span>
+        <span class="proof-label">nRF52 &middot; Zephyr RTOS &middot; u-blox Cellular</span>
       </article>
       <article class="proof-item">
-        <span class="proof-value">ROS + AI</span>
-        <span class="proof-label">Robotics and vision work</span>
+        <span class="proof-value">FPGA + RTL</span>
+        <span class="proof-label">Verilog &middot; Vivado &middot; Verification</span>
       </article>
       <article class="proof-item">
-        <span class="proof-value">FPGA</span>
-        <span class="proof-label">RTL and verification</span>
+        <span class="proof-value">IC Design</span>
+        <span class="proof-label">Sky130 &middot; Analog &middot; Layout &middot; DRC/LVS</span>
       </article>
     </div>
   </section>
@@ -225,20 +159,20 @@
     <h2>Focus Areas</h2>
     <div class="metrics-grid">
       <article class="metric">
+        <span class="metric-value">IC &amp; Mixed-Signal</span>
+        <span class="metric-label">Analog CMOS on Sky130, schematic through layout, plus mixed-signal PCB</span>
+      </article>
+      <article class="metric">
+        <span class="metric-value">FPGA / RTL</span>
+        <span class="metric-label">SystemVerilog, cocotb and formal verification, computer architecture</span>
+      </article>
+      <article class="metric">
         <span class="metric-value">Embedded</span>
-        <span class="metric-label">Firmware, wireless devices, and edge systems</span>
+        <span class="metric-label">C/C++, Zephyr RTOS, wireless and hardware integration</span>
       </article>
       <article class="metric">
-        <span class="metric-value">PCB</span>
-        <span class="metric-label">Mixed-signal hardware and sensor interfaces</span>
-      </article>
-      <article class="metric">
-        <span class="metric-value">Sensing</span>
-        <span class="metric-label">IIoT, data pipelines, and instrumentation</span>
-      </article>
-      <article class="metric">
-        <span class="metric-value">Control</span>
-        <span class="metric-label">Robotics, SLAM, and motor control systems</span>
+        <span class="metric-value">Robotics / AI</span>
+        <span class="metric-label">ROS, computer vision, SLAM, and autonomous sensing</span>
       </article>
     </div>
   </section>
@@ -246,12 +180,11 @@
   <section class="section">
     <div class="section-head">
       <div>
-        <h2>Recent engineering path</h2>
+        <h2>Engineering Experience</h2>
       </div>
-      <a class="inline-link" href="experience.html">Full experience</a>
+      <a class="inline-link" href="experience.html">Full experience &rarr;</a>
     </div>
     <div class="timeline-list timeline-list-compact" data-overview-timeline></div>
-    <p class="timeline-next" data-profile-next></p>
   </section>
 
   <section class="section">

@@ -1,11 +1,11 @@
 window.PORTFOLIO_DEFAULTS = {
   profile: {
     name: "Kaung Myat Tun",
-    role: "Embedded Electronics | PCB Hardware | Intelligent Sensing Systems",
+    role: "Electronics Engineer · IC Design · FPGA · Embedded Systems",
     shortRole: "Electronics & Embedded Systems Engineer",
-    summary: "Electronics and embedded systems engineer focused on intelligent sensing, mixed-signal PCB hardware, firmware, robotics systems, and practical hardware/software integration.",
-    why: "PLACEHOLDER - EDIT ME: I like hardware because it doesn't let you hide from a bad decision - the scope trace either matches the math or it doesn't.",
-    nextFocus: "PLACEHOLDER - EDIT ME: Next, I'm aiming toward low-power sensor IC and mixed-signal roles, building on the tapeout and PCB work above.",
+    summary: "Electronics engineer in Sheffield, just out of a First-Class MEng with a year in industry on embedded and wireless systems. My interests are fairly broad, but most of my own time goes into FPGA and digital design, and lately analog and IC.",
+    why: "",
+    nextFocus: "",
     photo: "",
     photoAlt: "Kaung Myat Tun profile photo",
     heroPhoto: "",
@@ -159,6 +159,8 @@ window.PORTFOLIO_DEFAULTS = {
         "Nordic nRF",
         "Silicon Labs",
         "U-blox",
+        "BLE",
+        "LTE / Cellular",
         "Zephyr RTOS"
       ]
     },
@@ -385,14 +387,27 @@ window.PORTFOLIO_DEFAULTS = {
   ],
   experience: [
     {
+      period: "Jul 2026 - Present",
+      title: "Stealth Startup",
+      tag: "Electronics Engineer",
+      place: "",
+      category: "Startup · Confidential",
+      summary: "Contributing to confidential early-stage electronics development and prototyping.",
+      details: "",
+      highlights: [],
+      image: "",
+      imageAlt: ""
+    },
+    {
       period: "Jul 2024 - Sep 2025",
       title: "Air Products",
       tag: "Electronics Engineer",
       place: "Basingstoke, UK",
-      summary: "Worked on industrial IIoT sensing systems across firmware, custom PCB prototypes, wireless devices, and live data infrastructure.",
+      category: "Industry",
+      summary: "Embedded electronics, BLE/LTE connectivity, firmware and engineering telemetry for industrial connected systems.",
       details: "The role connected embedded hardware with real industrial monitoring workflows: device firmware, wireless modules, 4-layer prototype PCBs, sensor data pipelines, and dashboarding for real-time engineering visibility.",
       highlights: [
-        "Developed C and C# firmware for Nordic, Silicon Labs, and U-blox chipsets.",
+        "Developed C and C# firmware for BLE devices on Nordic and Silicon Labs parts, and LTE cellular connectivity on U-blox modules.",
         "Prototyped custom 4-layer IIoT PCBs and supported hardware bring-up/debug.",
         "Contributed to Python, Docker, MQTT, machine-learning, and Grafana data pipelines."
       ],
@@ -400,11 +415,12 @@ window.PORTFOLIO_DEFAULTS = {
       imageAlt: "Air Products electronics engineering placement"
     },
     {
-      period: "Oct 2023 - Sept 2026",
+      period: "Oct 2023 - Sep 2026",
       title: "Project MarsWorks",
       tag: "Software / Electronics Engineer",
       place: "Sheffield, UK",
-      summary: "Developed rover localisation, sensor integration, motor control, and robotics software for a student Mars rover platform.",
+      category: "Student-led Engineering",
+      summary: "Developed rover localisation, sensor integration, motor control and ROS-based robotics software.",
       details: "This experience demonstrates practical robotics engineering: turning sensor inputs into navigation behaviour, integrating software with physical hardware, and testing mobility systems under realistic constraints.",
       highlights: [
         "Built localisation and SLAM workflows using ROS and computer vision.",
@@ -416,10 +432,11 @@ window.PORTFOLIO_DEFAULTS = {
     },
     {
       period: "Jun 2024 - Jul 2024",
-      title: "Pipebots, University of Sheffield",
+      title: "Pipebots · University of Sheffield",
       tag: "Research Assistant",
       place: "Sheffield, UK",
-      summary: "Built and tested visual navigation software for autonomous robot motion estimation using optical-flow methods.",
+      category: "Research",
+      summary: "Developed optical-flow-based visual navigation for autonomous robot motion estimation.",
       details: "The work focused on using live camera data to estimate movement and position, then validating the navigation approach across different surfaces to understand reliability in real-world conditions.",
       highlights: [
         "Used the RAFT optical-flow algorithm for live visual motion estimation.",
@@ -437,9 +454,17 @@ window.PORTFOLIO_DEFAULTS = {
       tag: "MEng Electrical and Electronic Engineering with an Industrial Placement Year",
       place: "Sheffield, UK",
       badge: "First Class Honours",
-      summary: "A one-year industrial placement was integrated into the course.",
+      summary: "Academic focus across semiconductor devices, integrated electronics, FPGA/digital design, embedded systems, computer architecture, power electronics and electric drives.",
       details: "",
       highlights: [],
+      tags: [
+        "Semiconductor Devices",
+        "Integrated Electronics",
+        "FPGA / Digital Design",
+        "Embedded Systems",
+        "Computer Architecture",
+        "Power Electronics & Electric Drives"
+      ],
       image: "",
       imageAlt: ""
     }
