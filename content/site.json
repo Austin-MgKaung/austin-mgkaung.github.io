@@ -151,19 +151,42 @@
   ],
   "projects": [
     {
-      "id": "project-1783648069620",
+      "id": "project-1789310947762",
       "partNumber": "",
-      "title": "New projecthkghkhjkghkj",
-      "category": "analog-ic",
-      "status": "Draft",
-      "stack": "khjhghkjgj",
-      "summary": "Add a summary...",
-      "details": "nmm,bn,bn,mb,bnm,",
+      "title": "COWCPU — Custom RV32I RISC-V Processor",
+      "category": "digital-fpga",
+      "status": "IN DEVELOPMENT",
+      "stack": "Verilog · RISC-V · Icarus Verilog · GTKWave · Vivado · Zybo Z7-10",
+      "summary": "A custom 32-bit RISC-V processor designed from the RTL level in Verilog, progressing from individual CPU components to a working multi-cycle RV32I processor and a 5-stage pipelined architecture.",
+      "details": "",
       "image": "",
       "imageAlt": "New project preview",
       "linkLabel": "",
       "linkUrl": "",
-      "featured": false
+      "featured": false,
+      "tags": [
+        "RISC-V",
+        "RV32I",
+        "FPGA",
+        "Verilog",
+        "RTL",
+        "CPU Design",
+        "Computer Architecture",
+        "Digital Design",
+        "Verification"
+      ],
+      "oneLiner": "A 32-bit RISC-V processor built from the RTL up",
+      "overview": "COWCPU is a custom 32-bit RISC-V processor developed from scratch to explore processor architecture, RTL design and FPGA implementation.\n\nThe project began with individual components such as the ALU and progressed into a working multi-cycle RV32I processor. Development is now continuing toward a 5-stage IF/ID/EX/MEM/WB pipeline, with later plans for hazard handling, forwarding, peripherals, performance monitoring and FPGA deployment on the Zybo Z7-10.",
+      "role": "Designed and implemented the processor architecture and RTL, including the ALU, datapath, control logic and instruction execution. Developed testbenches and used waveform-level debugging to verify processor behaviour while progressing from individual modules to a complete multi-cycle core and pipelined architecture.",
+      "specs": [],
+      "detail": [],
+      "gallery": [],
+      "skills": [],
+      "links": {
+        "github": "",
+        "report": "",
+        "demo": ""
+      }
     },
     {
       "id": "axon-hillock",
@@ -171,29 +194,37 @@
       "title": "Axon-Hillock spiking neuron",
       "category": "analog-ic",
       "status": "Layout in progress",
-      "stack": "Sky130, XSchem/ngspice, Magic, TinyTapeout TTSKY26c",
+      "stack": "SKY130 · SPICE · Analog IC Design · Layout · DRC / LVS",
       "summary": "Analog tapeout project implementing an Axon-Hillock spiking neuron model on the Sky130 open-source PDK.",
-      "details": "Schematic capture and SPICE simulation are complete; full-custom layout is underway in Magic with LVS/DRC verification through Netgen. The project is framed as a silicon credential and a step toward ultra-low-power sensor IC research.",
+      "details": "",
       "image": "",
       "imageAlt": "Oscilloscope-style trace for an analog spiking neuron project",
       "linkLabel": "",
       "linkUrl": "",
-      "featured": true
-    },
-    {
-      "id": "vibecheck",
-      "partNumber": "VC-OTA-02",
-      "title": "VibeCheck dual-channel OTA and FIR DSP",
-      "category": "analog-ic",
-      "status": "Taped out",
-      "stack": "Sky130, TinyTapeout TTSKY26b",
-      "summary": "Mixed-signal tapeout combining a two-stage Miller-compensated OTA with a dual-channel FIR DSP block.",
-      "details": "This project demonstrates analog front-end design paired with digital signal processing on the same die, making it a strong portfolio centerpiece for mixed-signal IC roles.",
-      "image": "",
-      "imageAlt": "Mixed-signal IC project preview",
-      "linkLabel": "",
-      "linkUrl": "",
-      "featured": true
+      "featured": true,
+      "tags": [
+        "SKY130",
+        "Analog IC",
+        "Mixed-Signal",
+        "Neuromorphic Computing",
+        "Spiking Neuron",
+        "Axon-Hillock",
+        "VLSI",
+        "Physical Design",
+        "TinyTapeout"
+      ],
+      "oneLiner": "A silicon spiking neuron designed from the transistor level up.",
+      "overview": "Axon-Hillock is an analog IC project exploring the implementation of a biologically inspired spiking neuron in the SKY130 process.\n\nThe circuit is being developed from schematic-level design and transistor simulation toward physical layout, DRC/LVS verification and post-layout characterisation. The longer-term goal is to prepare the design for fabrication and evaluate how closely measured behaviour matches pre-layout and post-layout simulations.",
+      "role": "Responsible for the circuit architecture, transistor-level implementation, simulation and verification of the neuron design. The project also covers the physical IC flow, including layout, DRC/LVS and post-layout analysis as development progresses.",
+      "specs": [],
+      "detail": [],
+      "gallery": [],
+      "skills": [],
+      "links": {
+        "github": "",
+        "report": "",
+        "demo": ""
+      }
     },
     {
       "id": "fir",
@@ -201,14 +232,37 @@
       "title": "AXI4-Lite FIR filter accelerator",
       "category": "signal-processing",
       "status": "Complete",
-      "stack": "SystemVerilog, cocotb, formal verification",
-      "summary": "Standalone digital design project with AXI4-Lite control, FIR datapath logic, CDC handling, and verification.",
-      "details": "Built to demonstrate RTL architecture and verification methodology independent of analog tapeout work. Test coverage includes cocotb simulation and clock-domain-crossing checks.",
+      "stack": "Verilog / SystemVerilog · AXI4-Lite · FPGA · Vivado · RTL Simulation",
+      "summary": "A hardware FIR filtering accelerator implemented in RTL and integrated through an AXI4-Lite interface for processor-controlled configuration and operation.",
+      "details": "",
       "image": "",
       "imageAlt": "Digital FIR accelerator project preview",
       "linkLabel": "",
       "linkUrl": "",
-      "featured": true
+      "featured": true,
+      "tags": [
+        "FPGA",
+        "RTL",
+        "AXI4-Lite",
+        "FIR Filter",
+        "DSP",
+        "Digital Signal Processing",
+        "Hardware Acceleration",
+        "Verilog",
+        "Digital Design"
+      ],
+      "oneLiner": "A memory-mapped FPGA accelerator for hardware FIR filtering.",
+      "overview": "This project implements a finite impulse response (FIR) filter as a dedicated RTL hardware accelerator, with an AXI4-Lite interface providing processor-accessible control and configuration.\n\nThe project explores the connection between digital signal processing and SoC hardware design, including FIR datapath implementation, fixed-width arithmetic, memory-mapped register interfaces and RTL verification.",
+      "role": "Designed and implemented the FIR processing datapath and AXI4-Lite interface, integrated the accelerator into the RTL design, and verified register transactions and filter behaviour through simulation and waveform analysis.",
+      "specs": [],
+      "detail": [],
+      "gallery": [],
+      "skills": [],
+      "links": {
+        "github": "",
+        "report": "",
+        "demo": ""
+      }
     },
     {
       "id": "fifo",
@@ -216,29 +270,76 @@
       "title": "CDC-safe asynchronous FIFO",
       "category": "digital-fpga",
       "status": "Complete",
-      "stack": "SystemVerilog, cocotb, SymbiYosys",
-      "summary": "Asynchronous FIFO using Gray-coded pointers for safe clock-domain crossing.",
-      "details": "Verified with cocotb-driven simulation and formal checks for CDC hazards using SymbiYosys. Prepared around interview topics including metastability, CDC, and Gray coding.",
+      "stack": "Verilog · CDC · FIFO · Cocotb · Icarus Verilog · GTKWave",
+      "summary": "A dual-clock asynchronous FIFO designed for reliable data transfer between unrelated clock domains, using Gray-code pointer synchronization and full/empty protection logic.",
+      "details": "",
       "image": "",
       "imageAlt": "Asynchronous FIFO project preview",
       "linkLabel": "",
       "linkUrl": "",
-      "featured": false
+      "featured": false,
+      "tags": [
+        "CDC",
+        "Asynchronous FIFO",
+        "Verilog",
+        "RTL",
+        "Clock Domain Crossing",
+        "Gray Code",
+        "Synchronizer",
+        "Digital Design",
+        "Verification",
+        "Cocotb"
+      ],
+      "oneLiner": "A robust dual-clock FIFO for safe data transfer across asynchronous clock domains.",
+      "overview": "This project implements an asynchronous FIFO for transferring data safely between independent write and read clock domains.\n\nThe design uses Gray-coded read and write pointers, multi-stage synchronizers and full/empty detection logic to reduce clock-domain-crossing risk and provide reliable FIFO operation under unrelated clock frequencies.",
+      "role": "Designed and implemented the FIFO RTL, including dual-port storage, binary and Gray-code pointer logic, clock-domain synchronizers and full/empty flag generation. Developed verification to exercise asynchronous read/write behaviour and inspected internal pointer and flag transitions using simulation waveforms.",
+      "specs": [],
+      "detail": [],
+      "gallery": [],
+      "skills": [],
+      "links": {
+        "github": "",
+        "report": "",
+        "demo": ""
+      }
     },
     {
       "id": "aes",
       "partNumber": "AES-PIPE-05",
-      "title": "Pipelined AES-128 FPGA implementation",
+      "title": "High-Throughput Pipelined AES-128 Accelerator",
       "category": "digital-fpga",
       "status": "Complete",
-      "stack": "Verilog, GitHub Actions, Verilator, lcov",
+      "stack": "Verilog · AES-128 · FPGA · Vivado · RTL Simulation",
       "summary": "Fully pipelined AES-128 implementation with CI-gated linting, simulation, and coverage.",
-      "details": "Treats an FPGA project with production-style rigor by running Verible linting, Verilator/cocotb simulation, and branch coverage reporting on every push.",
+      "details": "",
       "image": "",
       "imageAlt": "AES FPGA project preview",
       "linkLabel": "",
       "linkUrl": "",
-      "featured": false
+      "featured": false,
+      "tags": [
+        "AES-128",
+        "FPGA",
+        "Cryptography",
+        "RTL",
+        "Pipelining",
+        "Hardware Acceleration",
+        "Verilog",
+        "Digital Design",
+        "Symmetric Encryption"
+      ],
+      "oneLiner": "Fully pipelined AES-128 implementation with CI-gated linting, simulation, and coverage.",
+      "overview": "This project implements the AES-128 symmetric encryption algorithm as a pipelined RTL architecture for FPGA.\n\nThe design explores how cryptographic operations can be mapped into dedicated digital hardware, with the AES transformation stages organised to support increased processing throughput compared with a purely sequential implementation. The project combines cryptographic algorithm implementation, RTL design, pipelining and FPGA verification.",
+      "role": "",
+      "specs": [],
+      "detail": [],
+      "gallery": [],
+      "skills": [],
+      "links": {
+        "github": "",
+        "report": "",
+        "demo": ""
+      }
     },
     {
       "id": "adc",
@@ -246,14 +347,22 @@
       "title": "Dual ADS8568 FMC Carrier Board",
       "category": "pcb-hardware",
       "status": "Complete",
+      "stack": "Altium Designer, ADS8568, Nexys Video (Artix-7), FMC-LPC, REF6025",
+      "summary": "A 4-layer mixed-signal FMC carrier board digitising 12 conditioned analogue channels for an FPGA-based motor-dynamometer DAQ.",
+      "details": "",
+      "image": "",
+      "imageAlt": "Dual ADS8568 FMC carrier board project preview",
+      "linkLabel": "",
+      "linkUrl": "",
+      "featured": false,
       "tags": [
         "PCB",
         "MIXED-SIGNAL",
         "ADC"
       ],
-      "stack": "Altium Designer, ADS8568, Nexys Video (Artix-7), FMC-LPC, REF6025",
       "oneLiner": "A 4-layer mixed-signal FMC carrier board digitising 12 conditioned analogue channels for an FPGA-based motor-dynamometer DAQ.",
       "overview": "Interfaces two ADS8568 16-bit simultaneous-sampling SAR ADCs to a Xilinx Artix-7 FPGA over the FMC-LPC connector. Accepts twelve conditioned 0-10 V analogue channels, protects and buffers each ADC input, and routes the parallel data and control buses to the FPGA for deterministic 200 kS/s acquisition. Part of an MEng motor-dynamometer DAQ replacing a prior microcontroller design limited by channel skew and throughput.",
+      "role": "",
       "specs": [
         [
           "ADCs",
@@ -322,16 +431,11 @@
         "Grounding & isolation",
         "BOM engineering"
       ],
-      "image": "",
-      "imageAlt": "Dual ADS8568 FMC carrier board project preview",
-      "linkLabel": "",
-      "linkUrl": "",
       "links": {
         "github": "",
         "report": "",
         "demo": ""
-      },
-      "featured": false
+      }
     },
     {
       "id": "motor",
@@ -341,27 +445,53 @@
       "status": "Complete",
       "stack": "LEM LA55-P, OPA2197, ISO224, LTspice, Altium",
       "summary": "Isolated signal-conditioning board for three-phase motor current sensing.",
-      "details": "Uses LEM LA55-P Hall-effect sensors, OPA2197 op-amps, ISO224 isolation amplifiers, REF6025 reference, and isolated DC-DC conversion. Simulated in LTspice and laid out in Altium.",
+      "details": "",
       "image": "",
       "imageAlt": "Motor current sensing board project preview",
       "linkLabel": "",
       "linkUrl": "",
-      "featured": false
+      "featured": false,
+      "tags": [],
+      "oneLiner": "Isolated signal-conditioning board for three-phase motor current sensing.",
+      "overview": "Uses LEM LA55-P Hall-effect sensors, OPA2197 op-amps, ISO224 isolation amplifiers, REF6025 reference, and isolated DC-DC conversion. Simulated in LTspice and laid out in Altium.",
+      "role": "",
+      "specs": [],
+      "detail": [],
+      "gallery": [],
+      "skills": [],
+      "links": {
+        "github": "",
+        "report": "",
+        "demo": ""
+      }
     },
     {
       "id": "embedded",
       "partNumber": "EMB-RTOS-08",
       "title": "Embedded firmware and RISC-V systems",
       "category": "embedded-iot",
-      "status": "Selected work",
+      "status": "COMPLETE",
       "stack": "STM32, Zephyr RTOS, nRF52840, RISC-V RTL",
       "summary": "Grouped embedded-systems work covering firmware, RTOS development, and processor architecture.",
-      "details": "Shows the firmware and computer-architecture layer behind the mixed-signal and FPGA projects, including bare-metal STM32 work, Zephyr RTOS development, and RISC-V pipeline RTL.",
+      "details": "",
       "image": "",
       "imageAlt": "Embedded firmware project preview",
       "linkLabel": "",
       "linkUrl": "",
-      "featured": false
+      "featured": false,
+      "tags": [],
+      "oneLiner": "Grouped embedded-systems work covering firmware, RTOS development, and processor architecture.",
+      "overview": "Shows the firmware and computer-architecture layer behind the mixed-signal and FPGA projects, including bare-metal STM32 work, Zephyr RTOS development, and RISC-V pipeline RTL.",
+      "role": "",
+      "specs": [],
+      "detail": [],
+      "gallery": [],
+      "skills": [],
+      "links": {
+        "github": "",
+        "report": "",
+        "demo": ""
+      }
     }
   ],
   "experience": [
