@@ -2342,8 +2342,14 @@
       </article>`).join("");
   }
 
-  async function loadJson(path) {
-    const response = await fetch(path);
+  function cacheBustedPath(path) {
+    const separator = path.includes("?") ? "&" : "?";
+    return `${path}${separator}v=${Date.now()}`;
+  }
+
+  async function loadJson(path, options = {}) {
+    const fresh = Boolean(options.fresh);
+    const response = await fetch(fresh ? cacheBustedPath(path) : path, fresh ? { cache: "no-store" } : undefined);
     if (!response.ok) return null;
     return response.json();
   }
@@ -2352,12 +2358,12 @@
     if (window.location.protocol === "file:") return;
 
     try {
-      const siteContent = await loadJson("content/site.json");
+      const siteContent = await loadJson("content/site.json", { fresh: true });
       if (siteContent) {
         defaults = normalizeSite(siteContent);
       }
 
-      const skillsContent = await loadJson("content/skills.json");
+      const skillsContent = await loadJson("content/skills.json", { fresh: true });
       if (skillsContent) {
         defaults.skills = Array.isArray(skillsContent.skills) ? skillsContent.skills : defaults.skills;
         defaults.skillMap = Array.isArray(skillsContent.skillMap) ? skillsContent.skillMap : defaults.skillMap;
