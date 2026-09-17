@@ -609,7 +609,7 @@
 
   const OAUTH_BASE = "https://kaung-portfolio-auth.kaungmtun-austin.workers.dev";
   const GITHUB_API_BASE = "https://api.github.com";
-  const GITHUB_REPO = "Austin-MgKaung/portfolio";
+  const GITHUB_REPO = "Austin-MgKaung/austin-mgkaung.github.io";
   const TOKEN_KEY = "portfolio-gh-token";
   const SITE_JSON_PATH = "content/site.json";
   const SKILLS_JSON_PATH = "content/skills.json";

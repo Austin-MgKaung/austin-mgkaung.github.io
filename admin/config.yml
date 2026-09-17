@@ -3,7 +3,7 @@
 # a real GitHub OAuth App -- see kaung-portfolio-auth.kaungmtun-austin.workers.dev.
 backend:
   name: github
-  repo: Austin-MgKaung/portfolio
+  repo: Austin-MgKaung/austin-mgkaung.github.io
   branch: main
   base_url: https://kaung-portfolio-auth.kaungmtun-austin.workers.dev
   auth_endpoint: auth
@@ -11,8 +11,8 @@ backend:
 media_folder: "assets/uploads"
 public_folder: "assets/uploads"
 
-site_url: "https://austin-mgkaung.github.io/portfolio/"
-display_url: "https://austin-mgkaung.github.io/portfolio/"
+site_url: "https://austin-mgkaung.github.io/"
+display_url: "https://austin-mgkaung.github.io/"
 publish_mode: simple
 
 collections:
