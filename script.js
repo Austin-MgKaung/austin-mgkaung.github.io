@@ -2314,12 +2314,18 @@
   function renderContact() {
     const profile = defaults.profile || {};
     const primaryEmail = document.querySelector("[data-primary-email-link]");
-    const primaryCv = document.querySelector("[data-primary-cv-link]");
     if (primaryEmail && profile.email) {
       primaryEmail.href = `mailto:${profile.email}`;
     }
-    if (primaryCv && profile.cv) {
-      primaryCv.href = profile.cv;
+
+    const cvSelect = document.querySelector("[data-cv-select]");
+    const cvAction = document.querySelector("[data-cv-action]");
+    const cvStatus = document.querySelector("[data-cv-status]");
+    if (cvSelect && cvAction && cvStatus) {
+      cvAction.addEventListener("click", () => {
+        const selectedRole = cvSelect.options[cvSelect.selectedIndex].text;
+        cvStatus.textContent = `${selectedRole} CV is coming soon.`;
+      });
     }
 
     const target = document.querySelector("[data-contact-list]");
@@ -2330,8 +2336,7 @@
       profile.phone ? ["Phone", "Available for scheduled calls", `<a href="tel:${escapeHtml(String(profile.phone).replace(/\s+/g, ""))}">${escapeHtml(profile.phone)}</a>`] : null,
       profile.github ? ["GitHub", "Code, project repositories, and engineering work", `<a href="${escapeHtml(profile.github)}" target="_blank" rel="noopener">${escapeHtml(profile.githubLabel || profile.github)}</a>`] : null,
       profile.linkedin ? ["LinkedIn", "Professional profile and work history", `<a href="${escapeHtml(profile.linkedin)}" target="_blank" rel="noopener">${escapeHtml(profile.linkedinLabel || profile.linkedin)}</a>`] : null,
-      profile.location ? ["Location", "Current base", escapeHtml(profile.location)] : null,
-      profile.cv ? ["CV", "PDF resume for applications", `<a href="${escapeHtml(profile.cv)}" target="_blank" rel="noopener">Download PDF</a>`] : null
+      profile.location ? ["Location", "Current base", escapeHtml(profile.location)] : null
     ].filter(Boolean);
 
     target.innerHTML = rows.map(row => `

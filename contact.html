@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20260917">
 <script type="speculationrules">
 {
   "prerender": [
@@ -87,7 +87,18 @@
         <p>I am open to engineering opportunities, project discussions, and technical conversations around embedded electronics, PCB hardware, robotics, and sensing systems.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="mailto:kaungmtun.austin@gmail.com" data-primary-email-link>Email me</a>
-          <a class="btn btn-ghost" href="cv.pdf" target="_blank" rel="noopener" data-primary-cv-link>View CV</a>
+        </div>
+        <div class="cv-chooser">
+          <label for="cv-type">Choose the CV for your role</label>
+          <div class="cv-chooser-controls">
+            <select id="cv-type" data-cv-select>
+              <option value="ic-design">IC Design Engineer</option>
+              <option value="embedded-systems">Embedded Systems Engineer</option>
+              <option value="fpga">FPGA Engineer</option>
+            </select>
+            <button class="btn btn-ghost" type="button" data-cv-action>View selected CV</button>
+          </div>
+          <p class="cv-status" data-cv-status aria-live="polite">CV files will be available soon.</p>
         </div>
       </aside>
       <div class="contact-grid" data-contact-list></div>
@@ -102,6 +113,6 @@
 </footer>
 
 <script src="data.js?v=20260913"></script>
-<script src="script.js?v=20260913"></script>
+<script src="script.js?v=20260917"></script>
 </body>
 </html>

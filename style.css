@@ -2424,6 +2424,39 @@ h3 {
   color: var(--accent);
 }
 
+.cv-chooser {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: grid;
+  gap: 10px;
+  padding-top: 18px;
+}
+
+.cv-chooser label {
+  color: var(--panel-ink);
+  font-weight: 600;
+}
+
+.cv-chooser-controls {
+  display: grid;
+  gap: 10px;
+}
+
+.cv-chooser select {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 4px;
+  color: var(--ink);
+  font: inherit;
+  min-height: 44px;
+  padding: 9px 12px;
+  width: 100%;
+}
+
+.cv-status {
+  font-size: 0.86rem;
+  min-height: 1.3em;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
