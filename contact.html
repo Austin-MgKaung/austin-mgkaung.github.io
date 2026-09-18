@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260917">
+<link rel="stylesheet" href="style.css?v=20260918">
 <script type="speculationrules">
 {
   "prerender": [
@@ -101,7 +101,32 @@
           <p class="cv-status" data-cv-status aria-live="polite">CV files will be available soon.</p>
         </div>
       </aside>
-      <div class="contact-grid" data-contact-list></div>
+      <div class="contact-details">
+        <button class="btn btn-small btn-ghost contact-edit-entry" type="button" data-contact-edit-entry hidden>Edit contact details</button>
+        <form class="contact-editor" data-contact-editor hidden>
+          <div class="contact-editor-head">
+            <div>
+              <span class="contact-label">Owner controls</span>
+              <h2>Edit contact details</h2>
+            </div>
+            <span class="contact-edit-status" data-contact-edit-status aria-live="polite"></span>
+          </div>
+          <div class="contact-editor-fields">
+            <label>Email <input type="email" name="email" autocomplete="email" required></label>
+            <label>Phone <input type="tel" name="phone" autocomplete="tel"></label>
+            <label>Location <input type="text" name="location" autocomplete="address-level2"></label>
+            <label>GitHub URL <input type="url" name="github" placeholder="https://github.com/username"></label>
+            <label>GitHub display text <input type="text" name="githubLabel"></label>
+            <label>LinkedIn URL <input type="url" name="linkedin" placeholder="https://linkedin.com/in/username"></label>
+            <label>LinkedIn display text <input type="text" name="linkedinLabel"></label>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-small btn-primary" type="submit">Save changes</button>
+            <button class="btn btn-small btn-ghost" type="button" data-contact-edit-cancel>Cancel</button>
+          </div>
+        </form>
+        <div class="contact-grid" data-contact-list></div>
+      </div>
     </div>
   </section>
 </main>
@@ -113,6 +138,6 @@
 </footer>
 
 <script src="data.js?v=20260913"></script>
-<script src="script.js?v=20260917"></script>
+<script src="script.js?v=20260918"></script>
 </body>
 </html>

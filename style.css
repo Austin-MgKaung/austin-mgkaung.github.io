@@ -2457,6 +2457,78 @@ h3 {
   min-height: 1.3em;
 }
 
+.contact-details {
+  align-content: start;
+  display: grid;
+  gap: 14px;
+}
+
+.contact-edit-entry {
+  justify-self: start;
+}
+
+.contact-editor {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+}
+
+.contact-editor[hidden] {
+  display: none;
+}
+
+.contact-editor-head {
+  align-items: start;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.contact-editor-head h2 {
+  font-size: 1.15rem;
+  margin-top: 5px;
+}
+
+.contact-edit-status {
+  color: var(--accent-deep);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-align: right;
+}
+
+.contact-editor-fields {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-editor-fields label {
+  color: var(--ink-soft);
+  display: grid;
+  font-size: 0.82rem;
+  gap: 6px;
+}
+
+.contact-editor-fields input {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--ink);
+  font: inherit;
+  min-height: 42px;
+  min-width: 0;
+  padding: 8px 10px;
+  width: 100%;
+}
+
+.contact-editor-fields input:focus {
+  border-color: var(--teal);
+  outline: 2px solid rgba(21, 111, 120, 0.2);
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2781,7 +2853,8 @@ h3 {
   .skill-grid,
   .certificate-list.is-editing,
   .certificate-grid,
-  .contact-grid {
+  .contact-grid,
+  .contact-editor-fields {
     grid-template-columns: 1fr;
   }
 

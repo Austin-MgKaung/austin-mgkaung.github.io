@@ -2321,7 +2321,8 @@
     const cvSelect = document.querySelector("[data-cv-select]");
     const cvAction = document.querySelector("[data-cv-action]");
     const cvStatus = document.querySelector("[data-cv-status]");
-    if (cvSelect && cvAction && cvStatus) {
+    if (cvSelect && cvAction && cvStatus && !cvAction.dataset.bound) {
+      cvAction.dataset.bound = "true";
       cvAction.addEventListener("click", () => {
         const selectedRole = cvSelect.options[cvSelect.selectedIndex].text;
         cvStatus.textContent = `${selectedRole} CV is coming soon.`;
@@ -2345,6 +2346,82 @@
         <div class="contact-value">${row[2]}</div>
         <p>${row[1]}</p>
       </article>`).join("");
+  }
+
+  function initContactEditor() {
+    const entry = document.querySelector("[data-contact-edit-entry]");
+    const form = document.querySelector("[data-contact-editor]");
+    const cancel = document.querySelector("[data-contact-edit-cancel]");
+    const status = document.querySelector("[data-contact-edit-status]");
+    if (!entry || !form || !cancel) return;
+
+    const contactFields = ["email", "phone", "location", "github", "githubLabel", "linkedin", "linkedinLabel"];
+
+    function fillForm() {
+      const profile = defaults.profile || {};
+      contactFields.forEach(field => {
+        const input = form.elements.namedItem(field);
+        if (input) input.value = profile[field] || "";
+      });
+    }
+
+    function closeEditor() {
+      form.hidden = true;
+      entry.hidden = !isLoggedIn();
+      if (status) status.textContent = "";
+    }
+
+    function refreshVisibility() {
+      if (!isLoggedIn()) {
+        form.hidden = true;
+        entry.hidden = true;
+        return;
+      }
+      if (form.hidden) entry.hidden = false;
+    }
+
+    entry.addEventListener("click", () => {
+      fillForm();
+      entry.hidden = true;
+      form.hidden = false;
+      form.elements.namedItem("email")?.focus();
+    });
+
+    cancel.addEventListener("click", closeEditor);
+
+    form.addEventListener("submit", async event => {
+      event.preventDefault();
+      if (!isLoggedIn()) {
+        if (status) status.textContent = "Please log in again.";
+        return;
+      }
+
+      const updatedProfile = Object.assign({}, defaults.profile);
+      contactFields.forEach(field => {
+        const input = form.elements.namedItem(field);
+        updatedProfile[field] = input ? input.value.trim() : "";
+      });
+
+      const submit = form.querySelector('[type="submit"]');
+      if (submit) submit.disabled = true;
+      if (status) status.textContent = "Saving...";
+      try {
+        await saveSiteFieldToGateway("profile", updatedProfile, "Update contact details via inline editor");
+        defaults.profile = updatedProfile;
+        renderContact();
+        if (status) status.textContent = "Saved. The live site will update shortly.";
+        setTimeout(closeEditor, 1800);
+      } catch (error) {
+        if (status) status.textContent = error.message || "Save failed.";
+      } finally {
+        if (submit) submit.disabled = false;
+      }
+    });
+
+    onIdentityReady(() => {
+      refreshVisibility();
+      onAuthChange(refreshVisibility);
+    });
   }
 
   function cacheBustedPath(path) {
@@ -2462,6 +2539,7 @@
     initSkillEditor();
     initToolGroupEditor();
     initProfilePhotoEditor();
+    initContactEditor();
   }
 
   init();
