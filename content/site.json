@@ -529,6 +529,25 @@
   ],
   "certificates": [
     {
+      "category": "professional",
+      "title": "Altium Designer PCB  Design Course",
+      "issuer": "",
+      "date": "",
+      "summary": "Hands-on PCB design training using Altium Designer, covering schematic capture, component selection and placement, PCB layout and routing, design-rule checking, and preparation of manufacturing-ready PCB files.",
+      "skills": [
+        "PCB Design",
+        "Altium PCB",
+        "Schematic Capture",
+        "PCB Layout",
+        "Component Placement",
+        "PCB Routing"
+      ],
+      "image": "assets/uploads/1791290042276-Altium_Designer_PCB-certificate.png",
+      "imageAlt": "New certificate image",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
       "category": "course",
       "title": "PCB Design with EAGLE",
       "issuer": "",
