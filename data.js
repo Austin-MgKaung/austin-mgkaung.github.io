@@ -1,559 +1,1022 @@
 window.PORTFOLIO_DEFAULTS = {
-  profile: {
-    name: "Kaung Myat Tun",
-    role: "Electronics Engineer · IC Design · FPGA · Embedded Systems",
-    shortRole: "Electronics & Embedded Systems Engineer",
-    summary: "Electronics engineer in Sheffield, just out of a First-Class MEng with a year in industry on embedded and wireless systems. My interests are fairly broad, but most of my own time goes into FPGA and digital design, and lately analog and IC.",
-    why: "",
-    nextFocus: "",
-    photo: "",
-    photoAlt: "Kaung Myat Tun profile photo",
-    heroPhoto: "",
-    heroPhotoAlt: "Kaung Myat Tun profile photo",
-    location: "Sheffield, UK",
-    phone: "+44 7377 261996",
-    email: "kaungmtun.austin@gmail.com",
-    github: "https://github.com/Austin-MgKaung",
-    githubLabel: "github.com/Austin-MgKaung",
-    linkedin: "https://linkedin.com/in/kaung-myat-tun",
-    linkedinLabel: "Kaung Myat Tun | LinkedIn",
-    cv: "cv.pdf"
-  },
-  skills: [
-    {
-      group: "Analog / IC Design",
-      summary: "CMOS circuit design, SPICE simulation, open-source PDK flow, and layout verification.",
-      level: 4,
-      focus: "Specialist line",
-      items: [
-        "CMOS fundamentals",
-        "op-amps / OTAs",
-        "biasing and device sizing",
-        "SPICE simulation",
-        "layout, DRC, LVS",
-        "Sky130, XSchem, ngspice, Magic, Netgen"
-      ]
-    },
-    {
-      group: "Digital / FPGA",
-      summary: "RTL design, FPGA implementation, bus interfaces, pipelining, and clock-domain crossing.",
-      level: 4,
-      focus: "Strong line",
-      items: [
-        "Verilog / SystemVerilog",
-        "RTL architecture",
-        "AXI / bus interfaces",
-        "pipelining",
-        "CDC design",
-        "Vivado, Verilator"
-      ]
-    },
-    {
-      group: "Verification & Testing",
-      summary: "Simulation-first hardware development with testbenches, formal checks, CI, and coverage.",
-      level: 4,
-      focus: "Strong line",
-      items: [
-        "cocotb testbenches",
-        "formal verification",
-        "SymbiYosys",
-        "CI test pipelines",
-        "coverage-driven checks",
-        "debugging waveforms"
-      ]
-    },
-    {
-      group: "PCB / Hardware",
-      summary: "Mixed-signal board design, sensor interfaces, ADC signal chains, isolation, and practical bring-up.",
-      level: 4,
-      focus: "Strong line",
-      items: [
-        "Altium Designer",
-        "signal-chain design",
-        "ADC / sensor interfaces",
-        "isolation amplifiers",
-        "op-amp circuits",
-        "hardware bring-up"
-      ]
-    },
-    {
-      group: "Embedded / Software",
-      summary: "Firmware, C/C++, RTOS concepts, board-level integration, and low-level debugging.",
-      level: 3,
-      focus: "Developing line",
-      items: [
-        "C / C++",
-        "STM32 bare-metal",
-        "Zephyr RTOS",
-        "nRF52840",
-        "RISC-V RTL",
-        "serial and peripheral debugging"
-      ]
-    },
-    {
-      group: "AI / Data / Tools",
-      summary: "Python-based analysis, automation, early ML work, and data-structure/software projects.",
-      level: 3,
-      focus: "Growing line",
-      items: [
-        "Python",
-        "NumPy / pandas",
-        "data analysis",
-        "automation scripts",
-        "ML fundamentals",
-        "C++ data structures"
-      ]
-    },
-    {
-      group: "Lab / Measurement",
-      summary: "Bench-level debugging and measurement workflows for electronics projects.",
-      level: 4,
-      focus: "Practical line",
-      items: [
-        "oscilloscope",
-        "logic analyzer",
-        "signal generator",
-        "bench power supply",
-        "multimeter",
-        "fault isolation"
-      ]
-    }
-  ],
-  skillMap: [
-    { label: "Analog / IC", value: 4 },
-    { label: "Digital / FPGA", value: 4 },
-    { label: "PCB / Hardware", value: 4 },
-    { label: "Embedded", value: 3 },
-    { label: "AI / ML", value: 2 },
-    { label: "Software / C++", value: 3 },
-    { label: "Lab", value: 4 }
-  ],
-  toolGroups: [
-    {
-      group: "Analog / IC",
-      summary: "Open-source silicon and mixed-signal IC tools used for schematic capture, SPICE simulation, layout, and verification.",
-      context: "Used for Sky130-based analog and mixed-signal projects including schematic simulation, layout, DRC, and LVS checks.",
-      tools: [
-        "Sky130 PDK",
-        "XSchem",
-        "ngspice",
-        "Magic VLSI",
-        "Netgen",
-        "DRC",
-        "LVS",
-        "SPICE simulation",
-        "Mixed-signal design"
-      ]
-    },
-    {
-      group: "Embedded / Firmware",
-      summary: "Tools and platforms used for firmware development, wireless device work, chipset integration, and board-level debugging.",
-      context: "Used across industrial embedded systems and personal electronics projects, especially where firmware connects directly to sensors, wireless modules, and custom hardware.",
-      tools: [
-        "C",
-        "C#",
-        "C++",
-        "STM32",
-        "STM32CubeIDE",
-        "IAR Embedded Workbench",
-        "Nordic nRF",
-        "Silicon Labs",
-        "U-blox",
-        "BLE",
-        "LTE / Cellular",
-        "Zephyr RTOS"
-      ]
-    },
-    {
-      group: "Industrial Data / IIoT",
-      summary: "Tools used for sensor data collection, device communication, containers, dashboards, and real-time engineering visibility.",
-      context: "Used during industry placement work involving IIoT devices, MQTT data movement, Python services, Docker-based deployment, Grafana dashboards, and early machine-learning workflows.",
-      tools: [
-        "Python",
-        "MQTT",
-        "Docker",
-        "Grafana",
-        "Machine learning",
-        "Data pipelines",
-        "Real-time dashboards",
-        "Sensor telemetry"
-      ]
-    },
-    {
-      group: "PCB / Lab",
-      summary: "Hardware design and bench tools used for schematic capture, PCB layout, mixed-signal signal chains, and practical electronics debugging.",
-      context: "Used for custom PCB design, sensor interfaces, motor current sensing, ADC boards, simulation, measurement, and hardware bring-up.",
-      tools: [
-        "Altium Designer",
-        "Autodesk EAGLE",
-        "LTspice",
-        "Schematic capture",
-        "PCB layout",
-        "Oscilloscope",
-        "Logic analyzer",
-        "Signal generator",
-        "Bench power supply",
-        "Multimeter",
-        "Hardware bring-up"
-      ]
-    },
-    {
-      group: "Mechanical / 3D CAD",
-      summary: "Mechanical CAD and rapid-prototyping tools used for enclosures, brackets, mounting parts, and electronics packaging.",
-      context: "Useful for showing that hardware work does not stop at the PCB: boards still need mechanical fit, mounting, cable access, enclosure design, and printed prototypes.",
-      tools: [
-        "SolidWorks",
-        "Autodesk Fusion 360",
-        "3D printing",
-        "Enclosure design",
-        "Mounting brackets",
-        "Mechanical fit checks",
-        "Rapid prototyping"
-      ]
-    },
-    {
-      group: "Robotics / AI",
-      summary: "Robotics and vision tools used for navigation, localisation, optical-flow motion estimation, and sensor fusion.",
-      context: "Used in MarsWorks and Pipebots work for rover localisation, SLAM, camera-based motion estimation, and robot sensor integration.",
-      tools: [
-        "ROS",
-        "OpenCV",
-        "SLAM",
-        "RAFT optical flow",
-        "Computer vision",
-        "IMU",
-        "Encoders",
-        "Motor control"
-      ]
-    },
-    {
-      group: "FPGA / Verification",
-      summary: "Digital design and verification tools used for RTL development, simulation, formal checks, and CI-style validation.",
-      context: "Used for FPGA and digital logic projects including FIR filters, asynchronous FIFOs, AES pipelines, and verification-focused hardware design.",
-      tools: [
-        "Verilog",
-        "SystemVerilog",
-        "Vivado",
-        "cocotb",
-        "Verilator",
-        "SymbiYosys",
-        "GitHub Actions",
-        "Waveform debugging"
-      ]
-    }
-  ],
-  projects: [
-    {
-      id: "axon-hillock",
-      partNumber: "AH-SKY130-01",
-      title: "Axon-Hillock spiking neuron",
-      category: "analog-ic",
-      status: "Layout in progress",
-      stack: "Sky130, XSchem/ngspice, Magic, TinyTapeout TTSKY26c",
-      summary: "Analog tapeout project implementing an Axon-Hillock spiking neuron model on the Sky130 open-source PDK.",
-      details: "Schematic capture and SPICE simulation are complete; full-custom layout is underway in Magic with LVS/DRC verification through Netgen. The project is framed as a silicon credential and a step toward ultra-low-power sensor IC research.",
-      image: "",
-      imageAlt: "Oscilloscope-style trace for an analog spiking neuron project",
-      linkLabel: "",
-      linkUrl: "",
-      featured: true
-    },
-    {
-      id: "vibecheck",
-      partNumber: "VC-OTA-02",
-      title: "VibeCheck dual-channel OTA and FIR DSP",
-      category: "analog-ic",
-      status: "Taped out",
-      stack: "Sky130, TinyTapeout TTSKY26b",
-      summary: "Mixed-signal tapeout combining a two-stage Miller-compensated OTA with a dual-channel FIR DSP block.",
-      details: "This project demonstrates analog front-end design paired with digital signal processing on the same die, making it a strong portfolio centerpiece for mixed-signal IC roles.",
-      image: "",
-      imageAlt: "Mixed-signal IC project preview",
-      linkLabel: "",
-      linkUrl: "",
-      featured: true
-    },
-    {
-      id: "fir",
-      partNumber: "FIR-AXI-03",
-      title: "AXI4-Lite FIR filter accelerator",
-      category: "signal-processing",
-      status: "Complete",
-      stack: "SystemVerilog, cocotb, formal verification",
-      summary: "Standalone digital design project with AXI4-Lite control, FIR datapath logic, CDC handling, and verification.",
-      details: "Built to demonstrate RTL architecture and verification methodology independent of analog tapeout work. Test coverage includes cocotb simulation and clock-domain-crossing checks.",
-      image: "",
-      imageAlt: "Digital FIR accelerator project preview",
-      linkLabel: "",
-      linkUrl: "",
-      featured: true
-    },
-    {
-      id: "fifo",
-      partNumber: "FIFO-CDC-04",
-      title: "CDC-safe asynchronous FIFO",
-      category: "digital-fpga",
-      status: "Complete",
-      stack: "SystemVerilog, cocotb, SymbiYosys",
-      summary: "Asynchronous FIFO using Gray-coded pointers for safe clock-domain crossing.",
-      details: "Verified with cocotb-driven simulation and formal checks for CDC hazards using SymbiYosys. Prepared around interview topics including metastability, CDC, and Gray coding.",
-      image: "",
-      imageAlt: "Asynchronous FIFO project preview",
-      linkLabel: "",
-      linkUrl: "",
-      featured: false
-    },
-    {
-      id: "aes",
-      partNumber: "AES-PIPE-05",
-      title: "Pipelined AES-128 FPGA implementation",
-      category: "digital-fpga",
-      status: "Complete",
-      stack: "Verilog, GitHub Actions, Verilator, lcov",
-      summary: "Fully pipelined AES-128 implementation with CI-gated linting, simulation, and coverage.",
-      details: "Treats an FPGA project with production-style rigor by running Verible linting, Verilator/cocotb simulation, and branch coverage reporting on every push.",
-      image: "",
-      imageAlt: "AES FPGA project preview",
-      linkLabel: "",
-      linkUrl: "",
-      featured: false
-    },
-    {
-      id: "adc",
-      partNumber: "ADC-FMC-06",
-      title: "Dual ADS8568 FMC Carrier Board",
-      category: "pcb-hardware",
-      status: "Complete",
-      tags: ["PCB", "MIXED-SIGNAL", "ADC"],
-      stack: "Altium Designer, ADS8568, Nexys Video (Artix-7), FMC-LPC, REF6025",
-      oneLiner: "A 4-layer mixed-signal FMC carrier board digitising 12 conditioned analogue channels for an FPGA-based motor-dynamometer DAQ.",
-      overview: "Interfaces two ADS8568 16-bit simultaneous-sampling SAR ADCs to a Xilinx Artix-7 FPGA over the FMC-LPC connector. Accepts twelve conditioned 0-10 V analogue channels, protects and buffers each ADC input, and routes the parallel data and control buses to the FPGA for deterministic 200 kS/s acquisition. Part of an MEng motor-dynamometer DAQ replacing a prior microcontroller design limited by channel skew and throughput.",
-      specs: [
-        ["ADCs", "2x TI ADS8568, 16-bit, 8-ch simultaneous SAR"],
-        ["Channels", "12 (6 voltage + 6 current)"],
-        ["Input range", "0-10 V conditioned"],
-        ["Reference", "REF6025, 2.5 V precision (jumper-selectable)"],
-        ["FPGA interface", "FMC-LPC -> Nexys Video (Artix-7 XC7A200T)"],
-        ["Interface mode", "Parallel 16-bit"],
-        ["PCB", "4-layer mixed-signal"],
-        ["Supply", "24 V in -> 5 V analogue, 3.3 V digital (from FMC)"],
-        ["Main-component BOM", "~£167"]
-      ],
-      detail: [
-        { heading: "Architecture", body: "Sits between the analogue sensor boards and the FPGA. Conditioned 0-10 V signals enter via D-Sub, pass through buffering, RC filtering and ADC-input protection, then reach the two ADS8568 devices. The FPGA drives conversion-start, read and reset lines and reads back the parallel data/status buses through FMC-LPC." },
-        { heading: "Design decisions", body: "Chose the ADS8568 (true-bipolar, simultaneous-sampling SAR) over delta-sigma and pipeline alternatives because the motor waveforms are PWM-like and demand low-latency, phase-coherent multi-channel sampling. External REF6025 reference, jumper-selectable, for ADC accuracy." },
-        { heading: "Implementation", body: "4-layer mixed-signal stack-up for controlled grounding and clean power distribution. Analogue input section physically separated from the digital section; analogue traces kept short and direct; FMC-LPC connector positioned to mate mechanically with the Nexys Video board." },
-        { heading: "Challenges & solutions", body: "Shared CONVST/RESET across both ADCs handled with OR-gated reset logic. TVS protection on the 24 V rail. JTAG deliberately omitted since no components are JTAG-capable, using the 0 Ω bypass convention for the mezzanine." }
-      ],
-      gallery: [],
-      skills: ["Mixed-signal PCB", "Altium Designer", "16-bit SAR ADC interfacing", "FMC-LPC", "Artix-7 FPGA", "Analogue signal conditioning", "Power integrity", "Grounding & isolation", "BOM engineering"],
-      image: "",
-      imageAlt: "Dual ADS8568 FMC carrier board project preview",
-      linkLabel: "",
-      linkUrl: "",
-      links: { github: "", report: "", demo: "" },
-      featured: false
-    },
-    {
-      id: "motor",
-      partNumber: "MOT-ISO-07",
-      title: "Three-phase motor current-sensing board",
-      category: "pcb-hardware",
-      status: "Complete",
-      stack: "LEM LA55-P, OPA2197, ISO224, LTspice, Altium",
-      summary: "Isolated signal-conditioning board for three-phase motor current sensing.",
-      details: "Uses LEM LA55-P Hall-effect sensors, OPA2197 op-amps, ISO224 isolation amplifiers, REF6025 reference, and isolated DC-DC conversion. Simulated in LTspice and laid out in Altium.",
-      image: "",
-      imageAlt: "Motor current sensing board project preview",
-      linkLabel: "",
-      linkUrl: "",
-      featured: false
-    },
-    {
-      id: "embedded",
-      partNumber: "EMB-RTOS-08",
-      title: "Embedded firmware and RISC-V systems",
-      category: "embedded-iot",
-      status: "Selected work",
-      stack: "STM32, Zephyr RTOS, nRF52840, RISC-V RTL",
-      summary: "Grouped embedded-systems work covering firmware, RTOS development, and processor architecture.",
-      details: "Shows the firmware and computer-architecture layer behind the mixed-signal and FPGA projects, including bare-metal STM32 work, Zephyr RTOS development, and RISC-V pipeline RTL.",
-      image: "",
-      imageAlt: "Embedded firmware project preview",
-      linkLabel: "",
-      linkUrl: "",
-      featured: false
-    }
-  ],
-  experience: [
-    {
-      period: "Jul 2026 - Present",
-      title: "Stealth Startup",
-      tag: "Electronics Engineer",
-      place: "",
-      category: "Semiconductor · Edge Computing",
-      summary: "Exploring reconfigurable hardware and semiconductor architectures for specialised edge computing.",
-      details: "",
-      highlights: [],
-      image: "",
-      imageAlt: ""
-    },
-    {
-      period: "Jul 2024 - Sep 2025",
-      title: "Air Products",
-      tag: "Electronics Engineer",
-      place: "Basingstoke, UK",
-      category: "Industry",
-      summary: "Embedded electronics, BLE/LTE connectivity, firmware and engineering telemetry for industrial connected systems.",
-      details: "The role connected embedded hardware with real industrial monitoring workflows: device firmware, wireless modules, 4-layer prototype PCBs, sensor data pipelines, and dashboarding for real-time engineering visibility.",
-      highlights: [
-        "Developed C and C# firmware for BLE devices on Nordic and Silicon Labs parts, and LTE cellular connectivity on U-blox modules.",
-        "Prototyped custom 4-layer IIoT PCBs and supported hardware bring-up/debug.",
-        "Contributed to Python, Docker, MQTT, machine-learning, and Grafana data pipelines."
-      ],
-      image: "",
-      imageAlt: "Air Products electronics engineering placement"
-    },
-    {
-      period: "Oct 2023 - Sep 2026",
-      title: "Project MarsWorks",
-      tag: "Software / Electronics Engineer",
-      place: "Sheffield, UK",
-      category: "Student-led Engineering",
-      summary: "Developed rover localisation, sensor integration, motor control and ROS-based robotics software.",
-      details: "This experience demonstrates practical robotics engineering: turning sensor inputs into navigation behaviour, integrating software with physical hardware, and testing mobility systems under realistic constraints.",
-      highlights: [
-        "Built localisation and SLAM workflows using ROS and computer vision.",
-        "Integrated IMU and encoder inputs for motion estimation.",
-        "Designed and tested motor control systems for stable rover movement."
-      ],
-      image: "",
-      imageAlt: "Mars rover software and electronics project"
-    },
-    {
-      period: "Jun 2024 - Jul 2024",
-      title: "Pipebots · University of Sheffield",
-      tag: "Research Assistant",
-      place: "Sheffield, UK",
-      category: "Research",
-      summary: "Developed optical-flow-based visual navigation for autonomous robot motion estimation.",
-      details: "The work focused on using live camera data to estimate movement and position, then validating the navigation approach across different surfaces to understand reliability in real-world conditions.",
-      highlights: [
-        "Used the RAFT optical-flow algorithm for live visual motion estimation.",
-        "Processed camera data in real time to estimate robot movement and position.",
-        "Validated performance across multiple surface types."
-      ],
-      image: "",
-      imageAlt: "Autonomous robot visual navigation research"
-    }
-  ],
-  education: [
-    {
-      period: "2022 - 2026",
-      title: "University of Sheffield",
-      tag: "MEng Electrical and Electronic Engineering with an Industrial Placement Year",
-      place: "Sheffield, UK",
-      badge: "First Class Honours",
-      summary: "Academic focus across semiconductor devices, integrated electronics, FPGA/digital design, embedded systems, computer architecture, power electronics and electric drives.",
-      details: "",
-      highlights: [],
-      tags: [
-        "Semiconductor Devices",
-        "Integrated Electronics",
-        "FPGA / Digital Design",
-        "Embedded Systems",
-        "Computer Architecture",
-        "Power Electronics & Electric Drives"
-      ],
-      image: "",
-      imageAlt: ""
-    }
-  ],
-  certificates: [
-    {
-      category: "academic",
-      title: "MEng Electrical and Electronic Engineering",
-      issuer: "University of Sheffield",
-      date: "2022 - 2026",
-      summary: "Academic credential covering electronics, embedded systems, FPGA and digital design, signal processing, PCB hardware, and an integrated industrial placement year.",
-      skills: [
-        "Electrical engineering",
-        "Embedded systems",
-        "PCB hardware",
-        "Industrial placement"
-      ],
-      image: "assets/uploads/1787941174933-my_diploma.jpeg",
-      imageAlt: "University of Sheffield Master of Engineering degree certificate",
-      linkLabel: "",
-      linkUrl: ""
-    },
-    {
-      category: "academic",
-      title: "SURE Scheme 2024",
-      issuer: "University of Sheffield Academic Skills",
-      date: "2024",
-      summary: "Undergraduate research experience credential for completing a summer research project and producing academic outputs for a showcase event.",
-      skills: [
-        "Research",
-        "Academic communication",
-        "Project delivery",
-        "Engineering investigation"
-      ],
-      image: "assets/uploads/1787941267871-my_sure_scheme.jpeg",
-      imageAlt: "University of Sheffield SURE Scheme 2024 certificate",
-      linkLabel: "",
-      linkUrl: ""
-    },
-    {
-      category: "professional",
-      title: "SOLIDWORKS CAD Certificate",
-      issuer: "SOLIDWORKS",
-      date: "",
-      summary: "CAD credential supporting part modelling, assemblies, engineering drawings, enclosure design, mounting hardware, and mechanical fit checks for electronics projects.",
-      skills: [
-        "SOLIDWORKS",
-        "3D CAD",
-        "Assemblies",
-        "Engineering drawings"
-      ],
-      image: "",
-      imageAlt: "SOLIDWORKS certificate preview",
-      linkLabel: "",
-      linkUrl: ""
-    },
-    {
-      category: "professional",
-      title: "Cisco Networking / CCNA Certificate",
-      issuer: "Cisco",
-      date: "",
-      summary: "Networking credential covering IP fundamentals, switching, routing, network services, and security basics relevant to embedded, IIoT, and connected-device systems.",
-      skills: [
-        "Networking",
-        "IP connectivity",
-        "Switching",
-        "Routing"
-      ],
-      image: "",
-      imageAlt: "Cisco networking certificate preview",
-      linkLabel: "",
-      linkUrl: ""
-    },
-    {
-      category: "course",
-      title: "Embedded & Hardware Course Certificates",
-      issuer: "Selected course providers",
-      date: "",
-      summary: "Short-course credentials for firmware, STM32, RTOS concepts, PCB design, lab measurement, and practical hardware/software integration.",
-      skills: [
-        "Embedded C",
-        "STM32",
-        "PCB design",
-        "Lab measurement"
-      ],
-      image: "",
-      imageAlt: "Embedded and hardware course certificate preview",
-      linkLabel: "",
-      linkUrl: ""
-    }
-  ]
+    "profile":  {
+                    "name":  "Kaung Myat Tun",
+                    "role":  "Electronics Engineer · IC Design · FPGA · Embedded Systems",
+                    "shortRole":  "Electronics \u0026 Embedded Systems Engineer",
+                    "summary":  "Electronics engineer in Sheffield, just out of a First-Class MEng with a year in industry on embedded and wireless systems. My interests are fairly broad, but most of my own time goes into FPGA and digital design, and lately analog and IC.",
+                    "why":  "",
+                    "nextFocus":  "",
+                    "photo":  "assets/uploads/1783705428890-profile_pic.jpg",
+                    "photoAlt":  "Kaung Myat Tun profile photo",
+                    "heroPhoto":  "assets/uploads/1783702133771-ChatGPT-Image-Jul-10--2026--05_36_06-PM.jpg",
+                    "heroPhotoAlt":  "Kaung Myat Tun profile photo",
+                    "location":  "Sheffield, UK",
+                    "phone":  "+44 7377 261996",
+                    "email":  "kaungmtun.austin@gmail.com",
+                    "github":  "https://github.com/Austin-MgKaung",
+                    "githubLabel":  "github.com/Austin-MgKaung",
+                    "linkedin":  "https://linkedin.com/in/kaung-myat-tun",
+                    "linkedinLabel":  "Kaung Myat Tun | LinkedIn",
+                    "cv":  "cv.pdf"
+                },
+    "skills":  [
+                   {
+                       "group":  "Analog / IC Design",
+                       "summary":  "CMOS circuit design, SPICE simulation, open-source PDK flow, and layout verification.",
+                       "level":  2,
+                       "focus":  "Specialist line",
+                       "items":  [
+                                     "CMOS fundamentals",
+                                     "op-amps / OTAs",
+                                     "biasing and device sizing",
+                                     "SPICE simulation",
+                                     "layout, DRC, LVS",
+                                     "Sky130, XSchem, ngspice, Magic, Netgen"
+                                 ]
+                   },
+                   {
+                       "group":  "Digital / FPGA",
+                       "summary":  "RTL design, FPGA implementation, bus interfaces, pipelining, and clock-domain crossing.",
+                       "level":  2,
+                       "focus":  "Strong line",
+                       "items":  [
+                                     "Verilog / SystemVerilog",
+                                     "RTL architecture",
+                                     "AXI / bus interfaces",
+                                     "pipelining",
+                                     "CDC design",
+                                     "Vivado, Verilator"
+                                 ]
+                   },
+                   {
+                       "group":  "Verification \u0026 Testing",
+                       "summary":  "Simulation-first hardware development with testbenches, formal checks, CI, and coverage.",
+                       "level":  4,
+                       "focus":  "Strong line",
+                       "items":  [
+                                     "cocotb testbenches",
+                                     "formal verification",
+                                     "SymbiYosys",
+                                     "CI test pipelines",
+                                     "coverage-driven checks",
+                                     "debugging waveforms"
+                                 ]
+                   },
+                   {
+                       "group":  "PCB / Hardware",
+                       "summary":  "Mixed-signal board design, sensor interfaces, ADC signal chains, isolation, and practical bring-up.",
+                       "level":  4,
+                       "focus":  "Strong line",
+                       "items":  [
+                                     "Altium Designer",
+                                     "signal-chain design",
+                                     "ADC / sensor interfaces",
+                                     "isolation amplifiers",
+                                     "op-amp circuits",
+                                     "hardware bring-up"
+                                 ]
+                   },
+                   {
+                       "group":  "Embedded / Software",
+                       "summary":  "Firmware, C/C++, RTOS concepts, board-level integration, and low-level debugging.",
+                       "level":  3,
+                       "focus":  "Developing line",
+                       "items":  [
+                                     "C / C++",
+                                     "STM32 bare-metal",
+                                     "Zephyr RTOS",
+                                     "nRF52840",
+                                     "RISC-V RTL",
+                                     "serial and peripheral debugging"
+                                 ]
+                   },
+                   {
+                       "group":  "AI / Data / Tools",
+                       "summary":  "Python-based analysis, automation, early ML work, and data-structure/software projects.",
+                       "level":  3,
+                       "focus":  "Growing line",
+                       "items":  [
+                                     "Python",
+                                     "NumPy / pandas",
+                                     "data analysis",
+                                     "automation scripts",
+                                     "ML fundamentals",
+                                     "C++ data structures"
+                                 ]
+                   },
+                   {
+                       "group":  "Lab / Measurement",
+                       "summary":  "Bench-level debugging and measurement workflows for electronics projects.",
+                       "level":  4,
+                       "focus":  "Practical line",
+                       "items":  [
+                                     "oscilloscope",
+                                     "logic analyzer",
+                                     "signal generator",
+                                     "bench power supply",
+                                     "multimeter",
+                                     "fault isolation"
+                                 ]
+                   }
+               ],
+    "skillMap":  [
+                     {
+                         "label":  "Analog / IC",
+                         "value":  4
+                     },
+                     {
+                         "label":  "Digital / FPGA",
+                         "value":  4
+                     },
+                     {
+                         "label":  "PCB / Hardware",
+                         "value":  4
+                     },
+                     {
+                         "label":  "Embedded",
+                         "value":  3
+                     },
+                     {
+                         "label":  "AI / ML",
+                         "value":  2
+                     },
+                     {
+                         "label":  "Software / C++",
+                         "value":  3
+                     },
+                     {
+                         "label":  "Lab",
+                         "value":  4
+                     }
+                 ],
+    "projects":  [
+                     {
+                         "id":  "axon-hillock",
+                         "partNumber":  "AH-SKY130-01",
+                         "title":  "Axon-Hillock spiking neuron",
+                         "category":  "analog-ic",
+                         "status":  "Layout in progress",
+                         "stack":  "Sky130, XSchem/ngspice, Magic, TinyTapeout TTSKY26c",
+                         "summary":  "Analog tapeout project implementing an Axon-Hillock spiking neuron model on the Sky130 open-source PDK.",
+                         "details":  "",
+                         "image":  "",
+                         "imageAlt":  "Oscilloscope-style trace for an analog spiking neuron project",
+                         "linkLabel":  "",
+                         "linkUrl":  "",
+                         "featured":  true,
+                         "tags":  [
+
+                                  ],
+                         "oneLiner":  "Analog tapeout project implementing an Axon-Hillock spiking neuron model on the Sky130 open-source PDK.",
+                         "overview":  "Schematic capture and SPICE simulation are complete; full-custom layout is underway in Magic with LVS/DRC verification through Netgen. The project is framed as a silicon credential and a step toward ultra-low-power sensor IC research.",
+                         "role":  "",
+                         "specs":  [
+
+                                   ],
+                         "detail":  [
+
+                                    ],
+                         "gallery":  [
+
+                                     ],
+                         "skills":  [
+
+                                    ],
+                         "links":  {
+                                       "github":  "",
+                                       "report":  "",
+                                       "demo":  ""
+                                   }
+                     },
+                     {
+                         "id":  "vibecheck",
+                         "partNumber":  "VC-OTA-02",
+                         "title":  "VibeCheck dual-channel OTA and FIR DSP",
+                         "category":  "analog-ic",
+                         "status":  "Taped out",
+                         "stack":  "Sky130, TinyTapeout TTSKY26b",
+                         "summary":  "Mixed-signal tapeout combining a two-stage Miller-compensated OTA with a dual-channel FIR DSP block.",
+                         "details":  "",
+                         "image":  "",
+                         "imageAlt":  "Mixed-signal IC project preview",
+                         "linkLabel":  "",
+                         "linkUrl":  "",
+                         "featured":  true,
+                         "tags":  [
+
+                                  ],
+                         "oneLiner":  "Mixed-signal tapeout combining a two-stage Miller-compensated OTA with a dual-channel FIR DSP block.",
+                         "overview":  "This project demonstrates analog front-end design paired with digital signal processing on the same die, making it a strong portfolio centerpiece for mixed-signal IC roles.",
+                         "role":  "",
+                         "specs":  [
+
+                                   ],
+                         "detail":  [
+
+                                    ],
+                         "gallery":  [
+
+                                     ],
+                         "skills":  [
+
+                                    ],
+                         "links":  {
+                                       "github":  "",
+                                       "report":  "",
+                                       "demo":  ""
+                                   }
+                     },
+                     {
+                         "id":  "fir",
+                         "partNumber":  "FIR-AXI-03",
+                         "title":  "AXI4-Lite FIR filter accelerator",
+                         "category":  "signal-processing",
+                         "status":  "Complete",
+                         "stack":  "SystemVerilog, cocotb, formal verification",
+                         "summary":  "Standalone digital design project with AXI4-Lite control, FIR datapath logic, CDC handling, and verification.",
+                         "details":  "",
+                         "image":  "",
+                         "imageAlt":  "Digital FIR accelerator project preview",
+                         "linkLabel":  "",
+                         "linkUrl":  "",
+                         "featured":  true,
+                         "tags":  [
+
+                                  ],
+                         "oneLiner":  "Standalone digital design project with AXI4-Lite control, FIR datapath logic, CDC handling, and verification.",
+                         "overview":  "Built to demonstrate RTL architecture and verification methodology independent of analog tapeout work. Test coverage includes cocotb simulation and clock-domain-crossing checks.",
+                         "role":  "",
+                         "specs":  [
+
+                                   ],
+                         "detail":  [
+
+                                    ],
+                         "gallery":  [
+
+                                     ],
+                         "skills":  [
+
+                                    ],
+                         "links":  {
+                                       "github":  "",
+                                       "report":  "",
+                                       "demo":  ""
+                                   }
+                     },
+                     {
+                         "id":  "fifo",
+                         "partNumber":  "FIFO-CDC-04",
+                         "title":  "CDC-safe asynchronous FIFO",
+                         "category":  "digital-fpga",
+                         "status":  "Complete",
+                         "stack":  "SystemVerilog, cocotb, SymbiYosys",
+                         "summary":  "Asynchronous FIFO using Gray-coded pointers for safe clock-domain crossing.",
+                         "details":  "",
+                         "image":  "",
+                         "imageAlt":  "Asynchronous FIFO project preview",
+                         "linkLabel":  "",
+                         "linkUrl":  "",
+                         "featured":  false,
+                         "tags":  [
+
+                                  ],
+                         "oneLiner":  "Asynchronous FIFO using Gray-coded pointers for safe clock-domain crossing.",
+                         "overview":  "Verified with cocotb-driven simulation and formal checks for CDC hazards using SymbiYosys. Prepared around interview topics including metastability, CDC, and Gray coding.",
+                         "role":  "",
+                         "specs":  [
+
+                                   ],
+                         "detail":  [
+
+                                    ],
+                         "gallery":  [
+
+                                     ],
+                         "skills":  [
+
+                                    ],
+                         "links":  {
+                                       "github":  "",
+                                       "report":  "",
+                                       "demo":  ""
+                                   }
+                     },
+                     {
+                         "id":  "aes",
+                         "partNumber":  "AES-PIPE-05",
+                         "title":  "Pipelined AES-128 FPGA implementation",
+                         "category":  "digital-fpga",
+                         "status":  "Complete",
+                         "stack":  "Verilog, GitHub Actions, Verilator, lcov",
+                         "summary":  "Fully pipelined AES-128 implementation with CI-gated linting, simulation, and coverage.",
+                         "details":  "",
+                         "image":  "",
+                         "imageAlt":  "AES FPGA project preview",
+                         "linkLabel":  "",
+                         "linkUrl":  "",
+                         "featured":  false,
+                         "tags":  [
+
+                                  ],
+                         "oneLiner":  "Fully pipelined AES-128 implementation with CI-gated linting, simulation, and coverage.",
+                         "overview":  "Treats an FPGA project with production-style rigor by running Verible linting, Verilator/cocotb simulation, and branch coverage reporting on every push.",
+                         "role":  "",
+                         "specs":  [
+
+                                   ],
+                         "detail":  [
+
+                                    ],
+                         "gallery":  [
+
+                                     ],
+                         "skills":  [
+
+                                    ],
+                         "links":  {
+                                       "github":  "",
+                                       "report":  "",
+                                       "demo":  ""
+                                   }
+                     },
+                     {
+                         "id":  "adc",
+                         "partNumber":  "ADC-FMC-06",
+                         "title":  "Dual ADS8568 FMC Carrier Board",
+                         "category":  "pcb-hardware",
+                         "status":  "Complete",
+                         "stack":  "Altium Designer, ADS8568, Nexys Video (Artix-7), FMC-LPC, REF6025",
+                         "summary":  "A 4-layer mixed-signal FMC carrier board digitising 12 conditioned analogue channels for an FPGA-based motor-dynamometer DAQ.",
+                         "details":  "",
+                         "image":  "",
+                         "imageAlt":  "Dual ADS8568 FMC carrier board project preview",
+                         "linkLabel":  "",
+                         "linkUrl":  "",
+                         "featured":  false,
+                         "tags":  [
+                                      "PCB",
+                                      "MIXED-SIGNAL",
+                                      "ADC"
+                                  ],
+                         "oneLiner":  "A 4-layer mixed-signal FMC carrier board digitising 12 conditioned analogue channels for an FPGA-based motor-dynamometer DAQ.",
+                         "overview":  "Interfaces two ADS8568 16-bit simultaneous-sampling SAR ADCs to a Xilinx Artix-7 FPGA over the FMC-LPC connector. Accepts twelve conditioned 0-10 V analogue channels, protects and buffers each ADC input, and routes the parallel data and control buses to the FPGA for deterministic 200 kS/s acquisition. Part of an MEng motor-dynamometer DAQ replacing a prior microcontroller design limited by channel skew and throughput.",
+                         "role":  "",
+                         "specs":  [
+                                       [
+                                           "ADCs",
+                                           "2x TI ADS8568, 16-bit, 8-ch simultaneous SAR"
+                                       ],
+                                       [
+                                           "Channels",
+                                           "12 (6 voltage + 6 current)"
+                                       ],
+                                       [
+                                           "Input range",
+                                           "0-10 V conditioned"
+                                       ],
+                                       [
+                                           "Reference",
+                                           "REF6025, 2.5 V precision (jumper-selectable)"
+                                       ],
+                                       [
+                                           "FPGA interface",
+                                           "FMC-LPC -\u003e Nexys Video (Artix-7 XC7A200T)"
+                                       ],
+                                       [
+                                           "Interface mode",
+                                           "Parallel 16-bit"
+                                       ],
+                                       [
+                                           "PCB",
+                                           "4-layer mixed-signal"
+                                       ],
+                                       [
+                                           "Supply",
+                                           "24 V in -\u003e 5 V analogue, 3.3 V digital (from FMC)"
+                                       ],
+                                       [
+                                           "Main-component BOM",
+                                           "~£167"
+                                       ]
+                                   ],
+                         "detail":  [
+                                        {
+                                            "heading":  "Architecture",
+                                            "body":  "Sits between the analogue sensor boards and the FPGA. Conditioned 0-10 V signals enter via D-Sub, pass through buffering, RC filtering and ADC-input protection, then reach the two ADS8568 devices. The FPGA drives conversion-start, read and reset lines and reads back the parallel data/status buses through FMC-LPC."
+                                        },
+                                        {
+                                            "heading":  "Design decisions",
+                                            "body":  "Chose the ADS8568 (true-bipolar, simultaneous-sampling SAR) over delta-sigma and pipeline alternatives because the motor waveforms are PWM-like and demand low-latency, phase-coherent multi-channel sampling. External REF6025 reference, jumper-selectable, for ADC accuracy."
+                                        },
+                                        {
+                                            "heading":  "Implementation",
+                                            "body":  "4-layer mixed-signal stack-up for controlled grounding and clean power distribution. Analogue input section physically separated from the digital section; analogue traces kept short and direct; FMC-LPC connector positioned to mate mechanically with the Nexys Video board."
+                                        },
+                                        {
+                                            "heading":  "Challenges \u0026 solutions",
+                                            "body":  "Shared CONVST/RESET across both ADCs handled with OR-gated reset logic. TVS protection on the 24 V rail. JTAG deliberately omitted since no components are JTAG-capable, using the 0 Ω bypass convention for the mezzanine."
+                                        }
+                                    ],
+                         "gallery":  [
+
+                                     ],
+                         "skills":  [
+                                        "Mixed-signal PCB",
+                                        "Altium Designer",
+                                        "16-bit SAR ADC interfacing",
+                                        "FMC-LPC",
+                                        "Artix-7 FPGA",
+                                        "Analogue signal conditioning",
+                                        "Power integrity",
+                                        "Grounding \u0026 isolation",
+                                        "BOM engineering"
+                                    ],
+                         "links":  {
+                                       "github":  "",
+                                       "report":  "",
+                                       "demo":  ""
+                                   }
+                     },
+                     {
+                         "id":  "motor",
+                         "partNumber":  "MOT-ISO-07",
+                         "title":  "Three-phase motor current-sensing board",
+                         "category":  "pcb-hardware",
+                         "status":  "Complete",
+                         "stack":  "LEM LA55-P, OPA2197, ISO224, LTspice, Altium",
+                         "summary":  "Isolated signal-conditioning board for three-phase motor current sensing.",
+                         "details":  "",
+                         "image":  "",
+                         "imageAlt":  "Motor current sensing board project preview",
+                         "linkLabel":  "",
+                         "linkUrl":  "",
+                         "featured":  false,
+                         "tags":  [
+
+                                  ],
+                         "oneLiner":  "Isolated signal-conditioning board for three-phase motor current sensing.",
+                         "overview":  "Uses LEM LA55-P Hall-effect sensors, OPA2197 op-amps, ISO224 isolation amplifiers, REF6025 reference, and isolated DC-DC conversion. Simulated in LTspice and laid out in Altium.",
+                         "role":  "",
+                         "specs":  [
+
+                                   ],
+                         "detail":  [
+
+                                    ],
+                         "gallery":  [
+
+                                     ],
+                         "skills":  [
+
+                                    ],
+                         "links":  {
+                                       "github":  "",
+                                       "report":  "",
+                                       "demo":  ""
+                                   }
+                     },
+                     {
+                         "id":  "embedded",
+                         "partNumber":  "EMB-RTOS-08",
+                         "title":  "Embedded firmware and RISC-V systems",
+                         "category":  "embedded-iot",
+                         "status":  "Selected work",
+                         "stack":  "STM32, Zephyr RTOS, nRF52840, RISC-V RTL",
+                         "summary":  "Grouped embedded-systems work covering firmware, RTOS development, and processor architecture.",
+                         "details":  "",
+                         "image":  "",
+                         "imageAlt":  "Embedded firmware project preview",
+                         "linkLabel":  "",
+                         "linkUrl":  "",
+                         "featured":  false,
+                         "tags":  [
+
+                                  ],
+                         "oneLiner":  "Grouped embedded-systems work covering firmware, RTOS development, and processor architecture.",
+                         "overview":  "Shows the firmware and computer-architecture layer behind the mixed-signal and FPGA projects, including bare-metal STM32 work, Zephyr RTOS development, and RISC-V pipeline RTL.",
+                         "role":  "",
+                         "specs":  [
+
+                                   ],
+                         "detail":  [
+
+                                    ],
+                         "gallery":  [
+
+                                     ],
+                         "skills":  [
+
+                                    ],
+                         "links":  {
+                                       "github":  "",
+                                       "report":  "",
+                                       "demo":  ""
+                                   }
+                     }
+                 ],
+    "experience":  [
+                       {
+                           "period":  "Jul 2026 - Present",
+                           "title":  "Stealth Startup",
+                           "tag":  "Electronics Engineer",
+                           "place":  "",
+                           "category":  "Semiconductor · Edge Computing",
+                           "summary":  "Exploring reconfigurable hardware and semiconductor architectures for specialised edge computing.",
+                           "details":  "",
+                           "highlights":  [
+
+                                          ],
+                           "image":  "",
+                           "imageAlt":  ""
+                       },
+                       {
+                           "period":  "Jul 2024 - Sep 2025",
+                           "title":  "Air Products",
+                           "tag":  "Electronics Engineer",
+                           "place":  "Basingstoke, UK",
+                           "category":  "Industry",
+                           "summary":  "Embedded electronics, BLE/LTE connectivity, firmware and engineering telemetry for industrial connected systems.",
+                           "details":  "The role connected embedded hardware with real industrial monitoring workflows: device firmware, wireless modules, 4-layer prototype PCBs, sensor data pipelines, and dashboarding for real-time engineering visibility.",
+                           "highlights":  [
+                                              "Developed C and C# firmware for BLE devices on Nordic and Silicon Labs parts, and LTE cellular connectivity on U-blox modules.",
+                                              "Prototyped custom 4-layer IIoT PCBs and supported hardware bring-up/debug.",
+                                              "Contributed to Python, Docker, MQTT, machine-learning, and Grafana data pipelines."
+                                          ],
+                           "image":  "",
+                           "imageAlt":  "Air Products electronics engineering placement"
+                       },
+                       {
+                           "period":  "Oct 2023 - Sep 2026",
+                           "title":  "Project MarsWorks",
+                           "tag":  "Software / Electronics Engineer",
+                           "place":  "Sheffield, UK",
+                           "category":  "Student-led Engineering",
+                           "summary":  "Developed rover localisation, sensor integration, motor control and ROS-based robotics software.",
+                           "details":  "This experience demonstrates practical robotics engineering: turning sensor inputs into navigation behaviour, integrating software with physical hardware, and testing mobility systems under realistic constraints.",
+                           "highlights":  [
+                                              "Built localisation and SLAM workflows using ROS and computer vision.",
+                                              "Integrated IMU and encoder inputs for motion estimation.",
+                                              "Designed and tested motor control systems for stable rover movement."
+                                          ],
+                           "image":  "",
+                           "imageAlt":  "Mars rover software and electronics project"
+                       },
+                       {
+                           "period":  "Jun 2024 - Jul 2024",
+                           "title":  "Pipebots · University of Sheffield",
+                           "tag":  "Research Assistant",
+                           "place":  "Sheffield, UK",
+                           "category":  "Research",
+                           "summary":  "Developed optical-flow-based visual navigation for autonomous robot motion estimation.",
+                           "details":  "The work focused on using live camera data to estimate movement and position, then validating the navigation approach across different surfaces to understand reliability in real-world conditions.",
+                           "highlights":  [
+                                              "Used the RAFT optical-flow algorithm for live visual motion estimation.",
+                                              "Processed camera data in real time to estimate robot movement and position.",
+                                              "Validated performance across multiple surface types."
+                                          ],
+                           "image":  "",
+                           "imageAlt":  "Autonomous robot visual navigation research"
+                       }
+                   ],
+    "education":  [
+                      {
+                          "period":  "2022 - 2026",
+                          "title":  "University of Sheffield",
+                          "tag":  "MEng Electrical and Electronic Engineering with an Industrial Placement Year",
+                          "place":  "Sheffield, UK",
+                          "badge":  "First Class Honours",
+                          "summary":  "Academic focus across semiconductor devices, integrated electronics, FPGA/digital design, embedded systems, computer architecture, power electronics and electric drives.",
+                          "details":  "",
+                          "highlights":  [
+
+                                         ],
+                          "tags":  [
+                                       "Semiconductor Devices",
+                                       "Integrated Electronics",
+                                       "FPGA / Digital Design",
+                                       "Embedded Systems",
+                                       "Computer Architecture",
+                                       "Power Electronics \u0026 Electric Drives"
+                                   ],
+                          "image":  "",
+                          "imageAlt":  ""
+                      }
+                  ],
+    "certificates":  [
+                         {
+                             "category":  "professional",
+                             "title":  "Altium Designer PCB  Design Course",
+                             "issuer":  "",
+                             "date":  "",
+                             "summary":  "Hands-on PCB design training using Altium Designer, covering schematic capture, component selection and placement, PCB layout and routing, design-rule checking, and preparation of manufacturing-ready PCB files.",
+                             "skills":  [
+                                            "PCB Design",
+                                            "Altium PCB",
+                                            "Schematic Capture",
+                                            "PCB Layout",
+                                            "Component Placement",
+                                            "PCB Routing"
+                                        ],
+                             "image":  "assets/uploads/1791290042276-Altium_Designer_PCB-certificate.png",
+                             "imageAlt":  "New certificate image",
+                             "linkLabel":  "",
+                             "linkUrl":  ""
+                         },
+                         {
+                             "category":  "course",
+                             "title":  "PCB Design with EAGLE",
+                             "issuer":  "",
+                             "date":  "",
+                             "summary":  "Practical introduction to PCB design using Autodesk EAGLE, covering the workflow from schematic capture through PCB layout and preparing a board design for manufacture.",
+                             "skills":  [
+                                            "PCB Design",
+                                            "EAGLE PCB",
+                                            "Schematic Capture",
+                                            "PCB Layout",
+                                            "Component Placement",
+                                            "PCB Routing"
+                                        ],
+                             "image":  "assets/uploads/1788022025067-PCB_design_eagle.png",
+                             "imageAlt":  "LinkedIn Learning Learning PCB Design with EAGLE course certificate",
+                             "linkLabel":  "",
+                             "linkUrl":  ""
+                         },
+                         {
+                             "category":  "course",
+                             "title":  "C for Everyone, Part 2: Structured Programming",
+                             "issuer":  "",
+                             "date":  "",
+                             "summary":  "Intermediate C programming course covering structured programming, pointers, memory concepts, user-defined data structures, and more advanced C development techniques.",
+                             "skills":  [
+                                            "C",
+                                            "Structured Programming",
+                                            "Pointers",
+                                            "Memory Management",
+                                            "Data Structures"
+                                        ],
+                             "image":  "assets/uploads/1788021845582-C-for-Everyone--Part-2.png",
+                             "imageAlt":  "UC Santa Cruz C for Everyone Part 2 Structured Programming with Honors certificate",
+                             "linkLabel":  "Verify Certificate",
+                             "linkUrl":  "https://coursera.org/verify/A2U3SFRACWXS"
+                         },
+                         {
+                             "category":  "course",
+                             "title":  "C for Everyone, Part 1: Programming Fundamentals",
+                             "issuer":  "",
+                             "date":  "",
+                             "summary":  "Foundational C programming course covering variables, data types, operators, control flow, functions, arrays, and core procedural programming concepts.",
+                             "skills":  [
+                                            "C",
+                                            "Programming Fundamentals",
+                                            "Functions",
+                                            "Arrays",
+                                            "Algorithms",
+                                            "Procedural Programming"
+                                        ],
+                             "image":  "assets/uploads/1788021770638-C-for-Everyone--Part-1_Programming-Fundamentals.png",
+                             "imageAlt":  "UC Santa Cruz C for Everyone Part 1 Programming Fundamentals certificate",
+                             "linkLabel":  "Verify Certificate",
+                             "linkUrl":  "https://coursera.org/verify/4WFEXFDJ82UJ"
+                         },
+                         {
+                             "category":  "course",
+                             "title":  "Introduction to Data Science in Python",
+                             "issuer":  "",
+                             "date":  "",
+                             "summary":  "Introduction to data science using Python, with emphasis on Pandas, data cleaning, manipulation, analysis, and working with real-world datasets.",
+                             "skills":  [
+                                            "Python",
+                                            "Data Science",
+                                            "Pandas",
+                                            "Data Cleaning",
+                                            "Data Analysis"
+                                        ],
+                             "image":  "assets/uploads/1788021581252-Introduction-to-Data-Science-in-Python.png",
+                             "imageAlt":  "University of Michigan Introduction to Data Science in Python certificate",
+                             "linkLabel":  "Verify Certificate",
+                             "linkUrl":  "https://coursera.org/verify/NKXALZQTSU3W"
+                         },
+                         {
+                             "category":  "course",
+                             "title":  "Pandas",
+                             "issuer":  "",
+                             "date":  "",
+                             "summary":  "Practical course covering data manipulation and analysis with Pandas, including DataFrames, indexing, filtering, grouping, transformation, and data preparation.",
+                             "skills":  [
+                                            "Python",
+                                            "Pandas",
+                                            "Data Analysis",
+                                            "Data Manipulation",
+                                            "DataFrames"
+                                        ],
+                             "image":  "assets/uploads/1788021477617-Pandas.png",
+                             "imageAlt":  "Kaggle Pandas course certificate",
+                             "linkLabel":  "View Certificate",
+                             "linkUrl":  "https://www.kaggle.com/learn/certification/mgkaung/pandas"
+                         },
+                         {
+                             "category":  "course",
+                             "title":  "Python Programming Essentials",
+                             "issuer":  "",
+                             "date":  "",
+                             "summary":  "Foundational Python programming course covering expressions, variables, functions, conditional logic, iteration, and structured problem solving.",
+                             "skills":  [
+                                            "Python",
+                                            "Programming Fundamentals",
+                                            "Functions",
+                                            "Algorithms",
+                                            "Problem Solving"
+                                        ],
+                             "image":  "assets/uploads/1788021400707-Python-programming-Essentials.png",
+                             "imageAlt":  "Rice University Python Programming Essentials course certificate",
+                             "linkLabel":  "Verify Certificate",
+                             "linkUrl":  "https://coursera.org/verify/THVW635AVVXG"
+                         },
+                         {
+                             "category":  "course",
+                             "title":  "AI Programming with Python Nanodegree",
+                             "issuer":  "",
+                             "date":  "",
+                             "summary":  "AI-focused Nanodegree covering Python programming, NumPy, Pandas, Matplotlib, linear algebra, neural networks, and practical machine-learning workflows.",
+                             "skills":  [
+                                            "Python",
+                                            "Artificial Intelligence",
+                                            "NumPy",
+                                            "Pandas",
+                                            "Matplotlib",
+                                            "Neural Networks",
+                                            "Machine Learning"
+                                        ],
+                             "image":  "assets/uploads/1788021308005-AI-Programming-with-Python-Nanodegree.png",
+                             "imageAlt":  "Udacity AI Programming with Python Nanodegree certificate",
+                             "linkLabel":  "Verify Nanodegree",
+                             "linkUrl":  "https://www.udacity.com/certificate/7JFFCFG"
+                         },
+                         {
+                             "category":  "course",
+                             "title":  "Python for Everybody Specialization",
+                             "issuer":  "",
+                             "date":  "",
+                             "summary":  "Five-course Python specialization covering programming fundamentals, data structures, web data, databases, data processing, and visualization through practical projects.",
+                             "skills":  [
+                                            "Python",
+                                            "Data Structures",
+                                            "SQL",
+                                            "APIs",
+                                            "Web Data",
+                                            "Data Analysis",
+                                            "Data Visualization"
+                                        ],
+                             "image":  "assets/uploads/1788020857067-Python-for-Everybody-Specialization.png",
+                             "imageAlt":  "University of Michigan Python for Everybody Specialization certificate",
+                             "linkLabel":  "Verify Specialization",
+                             "linkUrl":  "https://coursera.org/verify/specialization/8R9NQVAV51ML"
+                         },
+                         {
+                             "category":  "course",
+                             "title":  "Using Databases with Python",
+                             "issuer":  "",
+                             "date":  "",
+                             "summary":  "Course covering relational databases, SQL, SQLite, data modelling, and integrating database systems with Python applications",
+                             "skills":  [
+                                            "Python",
+                                            "SQL",
+                                            "SQLite",
+                                            "Databases",
+                                            "Data Modelling"
+                                        ],
+                             "image":  "assets/uploads/1788020677109-Using-Databases-with-Python.png",
+                             "imageAlt":  "University of Michigan Using Databases with Python certificate",
+                             "linkLabel":  "Verify Certificate",
+                             "linkUrl":  "https://coursera.org/verify/V5ZTJHSU8RQB"
+                         },
+                         {
+                             "category":  "course",
+                             "title":  "Capstone: Retrieving, Processing, and Visualizing Data with Python",
+                             "issuer":  "",
+                             "date":  "",
+                             "summary":  "Capstone project applying Python to retrieve, process, analyse, and visualise data using techniques developed throughout the Python for Everybody programme.",
+                             "skills":  [
+                                            "Python",
+                                            "Data Processing",
+                                            "Data Visualization",
+                                            "APIs",
+                                            "Databases",
+                                            "Data Analysis"
+                                        ],
+                             "image":  "assets/uploads/1788020498042-Capstone_Retrieving_Processing_and_Visualiizing_Data_with_Python.png",
+                             "imageAlt":  "University of Michigan Python data processing and visualization capstone certificate",
+                             "linkLabel":  "Verify Certificate",
+                             "linkUrl":  "https://coursera.org/verify/9BZ2UF3P9E7Z"
+                         },
+                         {
+                             "category":  "course",
+                             "title":  "Using Python to Access Web Data",
+                             "issuer":  "",
+                             "date":  "",
+                             "summary":  "Applied Python course covering web requests, APIs, HTTP, JSON, XML, regular expressions, and extracting data from online sources.",
+                             "skills":  [
+                                            "Python",
+                                            "REST APIs",
+                                            "HTTP",
+                                            "JSON",
+                                            "XML",
+                                            "Web Scraping"
+                                        ],
+                             "image":  "assets/uploads/1788020340312-Using_Python_to_Access_Web_Data.png",
+                             "imageAlt":  "University of Michigan Using Python to Access Web Data certificate",
+                             "linkLabel":  "Verify Certificate",
+                             "linkUrl":  "https://coursera.org/verify/VLMM92DMRTMR"
+                         },
+                         {
+                             "category":  "course",
+                             "title":  "Python Data Structures",
+                             "issuer":  "",
+                             "date":  "",
+                             "summary":  "Course covering Python data structures including strings, lists, dictionaries, tuples, files, and techniques for organising and processing data.",
+                             "skills":  [
+                                            "Python",
+                                            "Data Structures",
+                                            "Lists",
+                                            "Dictionaries",
+                                            "File Processing"
+                                        ],
+                             "image":  "assets/uploads/1788020232705-Python_Data_Structures.png",
+                             "imageAlt":  "University of Michigan Python Data Structures course certificate",
+                             "linkLabel":  "Verify Certificate",
+                             "linkUrl":  "https://coursera.org/verify/LMVF8JBGN72T"
+                         },
+                         {
+                             "category":  "course",
+                             "title":  "Programming for Everybody (Getting Started with Python)",
+                             "issuer":  "",
+                             "date":  "",
+                             "summary":  "Introduction to Python programming covering variables, expressions, conditional execution, functions, loops, and fundamental programming concepts.",
+                             "skills":  [
+                                            "Python",
+                                            "Programming Fundamentals",
+                                            "Control Flow",
+                                            "Functions",
+                                            "Problem Solving"
+                                        ],
+                             "image":  "assets/uploads/1788020079748-Programming_for_Everybody_specialization.png",
+                             "imageAlt":  "University of Michigan Programming for Everybody Python course certificate",
+                             "linkLabel":  "Verify Certificate",
+                             "linkUrl":  "https://coursera.org/verify/7XF5VWXEYENG"
+                         },
+                         {
+                             "category":  "academic",
+                             "title":  "MEng Electrical and Electronic Engineering",
+                             "issuer":  "University of Sheffield",
+                             "date":  "2022 - 2026",
+                             "summary":  "First-Class MEng with an electronics-focused curriculum covering embedded systems, FPGA and digital design, semiconductor devices, signal processing, integrated circuit design, PCB hardware, and electronic system design, alongside an industrial placement year at Air Products.",
+                             "skills":  [
+                                            "Embedded Systems",
+                                            "FPGA",
+                                            "Digital Design",
+                                            "Semiconductor Devices",
+                                            "Integrated Circuit Design",
+                                            "Signal Processing",
+                                            "PCB Design",
+                                            "Electronic System Design",
+                                            "Industrial Electronics"
+                                        ],
+                             "image":  "assets/uploads/1787941174933-my_diploma.jpeg",
+                             "imageAlt":  "University of Sheffield Master of Engineering degree certificate",
+                             "linkLabel":  "",
+                             "linkUrl":  ""
+                         },
+                         {
+                             "category":  "academic",
+                             "title":  "SURE Scheme 2024",
+                             "issuer":  "University of Sheffield Academic Skills",
+                             "date":  "2024",
+                             "summary":  "Undergraduate research experience credential for completing a summer research project and producing academic outputs for a showcase event.",
+                             "skills":  [
+                                            "Research",
+                                            "Academic communication",
+                                            "Project delivery",
+                                            "Engineering investigation"
+                                        ],
+                             "image":  "assets/uploads/1787941267871-my_sure_scheme.jpeg",
+                             "imageAlt":  "University of Sheffield SURE Scheme 2024 certificate",
+                             "linkLabel":  "",
+                             "linkUrl":  ""
+                         }
+                     ],
+    "toolGroups":  [
+                       {
+                           "group":  "Analog / IC",
+                           "summary":  "Open-source silicon and mixed-signal IC tools used for schematic capture, SPICE simulation, layout, and verification.",
+                           "context":  "Used for Sky130-based analog and mixed-signal projects including schematic simulation, layout, DRC, and LVS checks.",
+                           "tools":  [
+                                         "Sky130 PDK",
+                                         "XSchem",
+                                         "ngspice",
+                                         "Magic VLSI",
+                                         "Netgen",
+                                         "DRC",
+                                         "LVS",
+                                         "SPICE simulation",
+                                         "Mixed-signal design"
+                                     ]
+                       },
+                       {
+                           "group":  "Embedded / Firmware",
+                           "summary":  "Tools and platforms used for firmware development, wireless device work, chipset integration, and board-level debugging.",
+                           "context":  "Used across industrial embedded systems and personal electronics projects, especially where firmware connects directly to sensors, wireless modules, and custom hardware.",
+                           "tools":  [
+                                         "C",
+                                         "C#",
+                                         "C++",
+                                         "STM32",
+                                         "STM32CubeIDE",
+                                         "IAR Embedded Workbench",
+                                         "Nordic nRF",
+                                         "Silicon Labs",
+                                         "U-blox",
+                                         "BLE",
+                                         "LTE / Cellular",
+                                         "Zephyr RTOS"
+                                     ]
+                       },
+                       {
+                           "group":  "Industrial Data / IIoT",
+                           "summary":  "Tools used for sensor data collection, device communication, containers, dashboards, and real-time engineering visibility.",
+                           "context":  "Used during industry placement work involving IIoT devices, MQTT data movement, Python services, Docker-based deployment, Grafana dashboards, and early machine-learning workflows.",
+                           "tools":  [
+                                         "Python",
+                                         "MQTT",
+                                         "Docker",
+                                         "Grafana",
+                                         "Machine learning",
+                                         "Data pipelines",
+                                         "Real-time dashboards",
+                                         "Sensor telemetry"
+                                     ]
+                       },
+                       {
+                           "group":  "PCB / Lab",
+                           "summary":  "Hardware design and bench tools used for schematic capture, PCB layout, mixed-signal signal chains, and practical electronics debugging.",
+                           "context":  "Used for custom PCB design, sensor interfaces, motor current sensing, ADC boards, simulation, measurement, and hardware bring-up.",
+                           "tools":  [
+                                         "Altium Designer",
+                                         "Autodesk EAGLE",
+                                         "LTspice",
+                                         "Schematic capture",
+                                         "PCB layout",
+                                         "Oscilloscope",
+                                         "Logic analyzer",
+                                         "Signal generator",
+                                         "Bench power supply",
+                                         "Multimeter",
+                                         "Hardware bring-up"
+                                     ]
+                       },
+                       {
+                           "group":  "Mechanical / 3D CAD",
+                           "summary":  "Mechanical CAD and rapid-prototyping tools used for enclosures, brackets, mounting parts, and electronics packaging.",
+                           "context":  "Useful for showing that hardware work does not stop at the PCB: boards still need mechanical fit, mounting, cable access, enclosure design, and printed prototypes.",
+                           "tools":  [
+                                         "SolidWorks",
+                                         "Autodesk Fusion 360",
+                                         "3D printing",
+                                         "Enclosure design",
+                                         "Mounting brackets",
+                                         "Mechanical fit checks",
+                                         "Rapid prototyping"
+                                     ]
+                       },
+                       {
+                           "group":  "Robotics / AI",
+                           "summary":  "Robotics and vision tools used for navigation, localisation, optical-flow motion estimation, and sensor fusion.",
+                           "context":  "Used in MarsWorks and Pipebots work for rover localisation, SLAM, camera-based motion estimation, and robot sensor integration.",
+                           "tools":  [
+                                         "ROS",
+                                         "OpenCV",
+                                         "SLAM",
+                                         "RAFT optical flow",
+                                         "Computer vision",
+                                         "IMU",
+                                         "Encoders",
+                                         "Motor control"
+                                     ]
+                       },
+                       {
+                           "group":  "FPGA / Verification",
+                           "summary":  "Digital design and verification tools used for RTL development, simulation, formal checks, and CI-style validation.",
+                           "context":  "Used for FPGA and digital logic projects including FIR filters, asynchronous FIFOs, AES pipelines, and verification-focused hardware design.",
+                           "tools":  [
+                                         "Verilog",
+                                         "SystemVerilog",
+                                         "Vivado",
+                                         "cocotb",
+                                         "Verilator",
+                                         "SymbiYosys",
+                                         "GitHub Actions",
+                                         "Waveform debugging"
+                                     ]
+                       }
+                   ]
 };
